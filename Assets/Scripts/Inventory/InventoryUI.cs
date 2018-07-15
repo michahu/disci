@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour {
 
     public Transform itemsParent;
+    public GameObject inventoryUI;
 
     Inventory inventory;
 
@@ -16,6 +17,13 @@ public class InventoryUI : MonoBehaviour {
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+    }
+
+    void Update () {
+        if(Input.GetButtonDown("Inventory"))
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
     }
 	
     // Update is called once per frame

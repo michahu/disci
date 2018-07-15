@@ -49,4 +49,6 @@ public class ShopManager : MonoBehaviour {
     {
         moneyUI.text = Money.money.ToString();
     }
+
+
 }
