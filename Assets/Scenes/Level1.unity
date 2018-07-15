@@ -2313,7 +2313,7 @@ Prefab:
     - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224880647836009606, guid: 105fa7358156e49c4afe8d20b0b1cbab,
         type: 2}
@@ -2428,6 +2428,31 @@ Prefab:
     - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1203448411}
+    - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnEquip
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040783390920174, guid: 105fa7358156e49c4afe8d20b0b1cbab,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3556,6 +3581,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 819463233}
+        m_MethodName: EquipItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c3e39ff6139ac4ef8a85508d9e04f954,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Equipment, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5614,6 +5651,7 @@ GameObject:
   - component: {fileID: 2009856086}
   - component: {fileID: 2009856085}
   - component: {fileID: 2009856087}
+  - component: {fileID: 2009856088}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -5683,6 +5721,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad200a5620249f4384bdc7c3258c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2009856088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8b33c9548e4485d87a04d08b6e5c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage:
+    baseValue: 0
+  armor:
+    baseValue: 0
 --- !u!1 &2036080379
 GameObject:
   m_ObjectHideFlags: 0
