@@ -4680,6 +4680,7 @@ GameObject:
   - component: {fileID: 1701301941}
   - component: {fileID: 1701301943}
   - component: {fileID: 1701301942}
+  - component: {fileID: 1701301944}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -4738,6 +4739,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701301940}
+--- !u!114 &1701301944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530401afca8764fc5b847df8fe43538e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  damage:
+    baseValue: 5
+  armor:
+    baseValue: 3
 --- !u!1 &1714184578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,12 +5746,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2009856083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd8b33c9548e4485d87a04d08b6e5c59, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d5c0e6ee015441adb4f55baf59c2144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage:
-    baseValue: 0
+    baseValue: 5
   armor:
     baseValue: 0
 --- !u!1 &2036080379

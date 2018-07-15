@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   equipSlot: 0
-  armorModifier: 5
-  damageModifier: 0
+  armorModifier: 3
+  damageModifier: 5
