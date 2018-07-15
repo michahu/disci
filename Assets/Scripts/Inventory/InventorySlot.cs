@@ -10,7 +10,7 @@ public class InventorySlot : MonoBehaviour {
     public void AddItem (GameObject newItem)
     {
         item = newItem;
-        icon.sprite = newItem.GetComponent<SpriteRenderer>().sprite;
+        icon.sprite = newItem.GetComponent<Image>().sprite;
         icon.enabled = true;
     }
 
@@ -18,6 +18,7 @@ public class InventorySlot : MonoBehaviour {
     {
         item = null;
 
+        icon.sprite = null;
         icon.enabled = false;
     }
 }
