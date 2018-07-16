@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public CanvasGroup qa;
     public CanvasGroup feedback;
     public CanvasGroup shop;
+    public CanvasGroup combat;
 
     // question tracking
     private static List<Question> unanswered;
@@ -19,21 +20,49 @@ public class GameManager : MonoBehaviour {
 
     // attach on screen text to question
     public Text questionText;
-    public Text feedbackText;
     public Text a1;
     public Text a2;
     public Text a3;
     public Text a4;
+    public Text feedbackText;
+
+    // moving between canvas groups
+    private CanvasGroup[] canvasGroups;
+    private int gameState;
+    public GameObject trans;
+
+    /*
+     * 0 = qa
+     * 1 = feedback
+     * 2 = shop
+     * 3 = combat
+     */
 
     public void Start()
     {
+        canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
+        gameState = 0;
+        trans.SetActive(false);
+
         if (unanswered == null || unanswered.Count == 0)
         {
             unanswered = questions.ToList<Question>();
         }
         GetQuestion();
     }
+    public void Advance()
+    {
+        gameState = mod(gameState + 1, 4);
+        Debug.Log("GAMESTATE: " + gameState);
+        Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
+        if (gameState == 0) trans.SetActive(false);
+        else trans.SetActive(true);
+    }
 
+    private int mod(int x, int m)
+    {
+        return (x % m + m) % m;
+    }
     void GetQuestion()
     {
         int rand = UnityEngine.Random.Range(0, unanswered.Count);
@@ -58,7 +87,7 @@ public class GameManager : MonoBehaviour {
         {
             Incorrect();
         }
-        Helper.Switch(qa, feedback);
+        Advance();
     }
     public void UserSelectB()
     {
@@ -70,8 +99,7 @@ public class GameManager : MonoBehaviour {
         {
             Incorrect();
         }
-        Helper.Switch(qa, feedback);
-
+        Advance();
     }
     public void UserSelectC()
     {
@@ -83,7 +111,7 @@ public class GameManager : MonoBehaviour {
         {
             Incorrect();
         }
-        Helper.Switch(qa, feedback);
+        Advance();
     }
     public void UserSelectD()
     {
@@ -95,22 +123,17 @@ public class GameManager : MonoBehaviour {
         {
             Incorrect();
         }
-        Helper.Switch(qa, feedback);
+        Advance();
     }
-
     private void Incorrect()
     {
         feedbackText.text = "GOTCHA BITCH";
-    }
-
-    public void FeedbackOK()
-    {
-        Helper.Switch(feedback, shop);
     }
     public void Correct()
     {
         Money.AddMoney(1);
         feedbackText.text = "Correct!";
     }
-
 }
+
+

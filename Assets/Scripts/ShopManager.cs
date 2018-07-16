@@ -9,8 +9,9 @@ public class ShopManager : MonoBehaviour {
     public GameObject panel;
     public CanvasGroup shop;
     public CanvasGroup combat;
+    public GameObject AdvButton; // shitty fix, wil remove
 
-    public void Start()
+    public void StartShop()
     {
         UpdateMoney();
         panel.SetActive(false);
@@ -37,16 +38,11 @@ public class ShopManager : MonoBehaviour {
         EquipmentManager.instance.Equip(gameObject);
     }
 
-    public void OnOk()
-    {
-        Helper.Switch(shop, combat);
-    }
-
     public void CheckMoney() {
         if (Money.money <= 0)
         {
             panel.SetActive(true);
-            moneyUI.enabled = false;
+            // moneyUI.enabled = false;
         }
     }
 
