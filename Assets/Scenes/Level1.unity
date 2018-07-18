@@ -1473,6 +1473,39 @@ RectTransform:
   m_AnchoredPosition: {x: 51.5, y: 26.399994}
   m_SizeDelta: {x: 269.3, y: 90.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &371666863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 371666864}
+  m_Layer: 5
+  m_Name: HealthUI Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &371666864
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371666863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009856084}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -47.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &422421559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4563,6 +4596,7 @@ GameObject:
   - component: {fileID: 1701301943}
   - component: {fileID: 1701301942}
   - component: {fileID: 1701301944}
+  - component: {fileID: 1701301945}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -4579,7 +4613,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0001, y: 1.0001, z: 1.0001}
-  m_Children: []
+  m_Children:
+  - {fileID: 2088674416}
   m_Father: {fileID: 424153207}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4637,6 +4672,19 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 3
+--- !u!114 &1701301945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf6e34b4e9594c43bdef23c29afc7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPrefab: {fileID: 1301231068880776, guid: 2106215f0355b447c9d0a4b1aa74a2b2, type: 2}
+  target: {fileID: 2088674416}
 --- !u!1 &1714184578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5551,6 +5599,7 @@ GameObject:
   - component: {fileID: 2009856085}
   - component: {fileID: 2009856087}
   - component: {fileID: 2009856088}
+  - component: {fileID: 2009856089}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -5567,7 +5616,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 371666864}
   m_Father: {fileID: 424153207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5636,6 +5686,19 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 0
+--- !u!114 &2009856089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf6e34b4e9594c43bdef23c29afc7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPrefab: {fileID: 1301231068880776, guid: 2106215f0355b447c9d0a4b1aa74a2b2, type: 2}
+  target: {fileID: 371666864}
 --- !u!1 &2036080379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,4 +6056,37 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 0, y: -1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2088674415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2088674416}
+  m_Layer: 5
+  m_Name: HealthUI Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2088674416
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2088674415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1701301941}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -50.1}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
