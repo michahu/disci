@@ -27,7 +27,7 @@ public class InventoryUI : MonoBehaviour {
     }
 	
     // Update is called once per frame
-	public void UpdateUI () 
+    void UpdateUI () 
     {
         for (int i = 0; i < slots.Length; i++)
         {

@@ -6,13 +6,13 @@ public class InventorySlot : MonoBehaviour {
     public Image icon;
     public Button removeButton;
 
-    GameObject item;
+    Equipment item;
 
-    public void AddItem (GameObject newItem)
+    public void AddItem (Equipment newItem)
     {
         item = newItem;
 
-        icon.sprite = newItem.GetComponent<Image>().sprite;
+        icon.sprite = newItem.icon;
         icon.enabled = true;
         removeButton.interactable = true;
     }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Equipment : ScriptableObject {
     
     new public string name = "New Item";
+    public Sprite icon = null;
 
     public EquipmentSlot equipSlot;
 

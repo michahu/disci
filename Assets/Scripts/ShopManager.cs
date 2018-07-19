@@ -24,20 +24,6 @@ public class ShopManager : MonoBehaviour {
         CheckMoney();
     }
 
-    public void AddItem (GameObject item)
-    {
-        Debug.Log("Picking up item.");
-        /* bool wasPickedUp = Inventory.instance.Add(item);
-
-        if (wasPickedUp)*/
-        Destroy(item);
-    }
-
-    public void EquipItem(Equipment gameObject)
-    {
-        EquipmentManager.instance.Equip(gameObject);
-    }
-
     public void CheckMoney() {
         if (Money.money <= 0)
         {

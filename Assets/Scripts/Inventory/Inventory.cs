@@ -22,9 +22,9 @@ public class Inventory : MonoBehaviour {
 
 	public int space = 6;
 	
-	public List<GameObject> items = new List<GameObject>();
-	
-	public bool Add (GameObject item)
+	public List<Equipment> items = new List<Equipment>();
+
+    public bool Add(Equipment item)
 	{
 		if (items.Count >= space)
 		{
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour {
 	    return true;
 	}
 	
-	public void Remove (GameObject item)
+	public void Remove (Equipment item)
 	{
 		items.Remove(item);
 		

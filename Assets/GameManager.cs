@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour {
 
         // setting up attack only if at that stage
         if (gameState == 3) inCombat = true;
-        Debug.Log(inCombat);
     }
 
     private int mod(int x, int m)
