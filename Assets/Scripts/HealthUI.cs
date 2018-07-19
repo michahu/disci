@@ -23,6 +23,7 @@ public class HealthUI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+    // Update when taking damage
 	void Update () {
 		
 	}
