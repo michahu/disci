@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
     private int gameState;
     public GameObject trans;
 
+    // turning on combat system
+    public static bool inCombat;
+
     /*
      * 0 = qa
      * 1 = feedback
@@ -57,6 +60,10 @@ public class GameManager : MonoBehaviour {
         Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
         if (gameState == 0) trans.SetActive(false);
         else trans.SetActive(true);
+
+        // setting up attack only if at that stage
+        if (gameState == 3) inCombat = true;
+        Debug.Log(inCombat);
     }
 
     private int mod(int x, int m)

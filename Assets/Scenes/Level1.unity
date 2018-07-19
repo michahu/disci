@@ -4598,7 +4598,7 @@ GameObject:
   - component: {fileID: 1701301944}
   - component: {fileID: 1701301945}
   - component: {fileID: 1701301946}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5613,6 +5613,7 @@ GameObject:
   - component: {fileID: 2009856088}
   - component: {fileID: 2009856089}
   - component: {fileID: 2009856090}
+  - component: {fileID: 2009856092}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -5723,6 +5724,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec614f8750af4174b6e9be25680ace9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2009856092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2009856090}
+          m_MethodName: Attack
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1701301940}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &2036080379
 GameObject:
   m_ObjectHideFlags: 0
