@@ -1,12 +1,12 @@
 public abstract class Card
 {
-    abstract void Attack();
+    public abstract void Attack();
 
-    abstract void Defend();
+    public abstract void Defend();
 
-    abstract void Heal();
+    public abstract void Heal();
 
-    abstract void Buff();
+    public abstract void Buff();
 
-    abstract void Debuff();
+    public abstract void Debuff();
 }
