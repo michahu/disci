@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,8 +207,8 @@ MonoBehaviour:
   - {fileID: 137342225}
   - {fileID: 635951802}
   - {fileID: 839940424}
-  shadowNormalSize: 1
-  shadowActiveSize: 2
+  shadowNormalSize: 2
+  shadowActiveSize: 3
   shadowsActiveWhen: 0
   isEnabled: 1
 --- !u!114 &26582553
@@ -660,8 +660,8 @@ MonoBehaviour:
   - {fileID: 422694769}
   - {fileID: 1792757108}
   - {fileID: 1471293934}
-  shadowNormalSize: 1
-  shadowActiveSize: 2
+  shadowNormalSize: 2
+  shadowActiveSize: 3
   shadowsActiveWhen: 0
   isEnabled: 1
 --- !u!114 &204465876
@@ -1057,8 +1057,8 @@ MonoBehaviour:
   - {fileID: 1407303446}
   - {fileID: 2074330401}
   - {fileID: 274082650}
-  shadowNormalSize: 1
-  shadowActiveSize: 2
+  shadowNormalSize: 2
+  shadowActiveSize: 3
   shadowsActiveWhen: 0
   isEnabled: 1
 --- !u!114 &253034452
@@ -1934,7 +1934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578343538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,7 +2578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &726676482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3421,13 +3421,69 @@ MonoBehaviour:
     - neutron
     - electron
     - positron
-  - q: 1 + 1 =
+  - q: What are the rows of the periodic table called?
+    ans: 3
+    answers:
+    - Groups
+    - Families
+    - Elements
+    - Periods
+  - q: What family is the element Sodium part of?
+    ans: 0
+    answers:
+    - Alkali Metals
+    - Transition Metals
+    - Halogens
+    - Noble Gases
+  - q: What do we call the number associated with each element on the periodic table?
+    ans: 2
+    answers:
+    - Atomic Mass
+    - Atomic Weight
+    - Atomic Number
+    - Atomic Identity
+  - q: Which two atom particles have 1 amu mass?
     ans: 1
     answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - Protons and Electrons
+    - Protons and Neutrons
+    - Neutrons and Electrons
+    - Atoms and Neutrons
+  - q: Which state of matter is a substance with a definite shape and volume?
+    ans: 0
+    answers:
+    - Solid
+    - Liquid
+    - Gas
+    - Vapor
+  - q: Which of these elements is a halogen?
+    ans: 1
+    answers:
+    - Hydrogen
+    - Fluorine
+    - Silicon
+    - Helium
+  - q: What do you call the change of state from solid to gas?
+    ans: 3
+    answers:
+    - Evaporation
+    - Melting
+    - Freezing
+    - Sublimation
+  - q: What is the key difference between vaporization and evaporation?
+    ans: 2
+    answers:
+    - They are the same thing
+    - One is about elements; the other about compounts
+    - Changes of state below vs. above the boiling point
+    - One involves electrons; the other does not
+  - q: Which change of state is NOT exothermic?
+    ans: 1
+    answers:
+    - Freezing
+    - Melting
+    - Deposition
+    - Condensation
   qa: {fileID: 563375410}
   feedback: {fileID: 569447794}
   shop: {fileID: 665491631}
@@ -4098,8 +4154,8 @@ MonoBehaviour:
   - {fileID: 1831375156}
   - {fileID: 1259042499}
   - {fileID: 1058974414}
-  shadowNormalSize: 1
-  shadowActiveSize: 2
+  shadowNormalSize: 2
+  shadowActiveSize: 3
   shadowsActiveWhen: 0
   isEnabled: 1
 --- !u!114 &1394516849

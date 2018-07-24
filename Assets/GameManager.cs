@@ -58,7 +58,11 @@ public class GameManager : MonoBehaviour {
         gameState = mod(gameState + 1, 4);
         Debug.Log("GAMESTATE: " + gameState);
         Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
-        if (gameState == 0) trans.SetActive(false);
+        if (gameState == 0)
+        {
+            GetQuestion();
+            trans.SetActive(false);
+        }
         else trans.SetActive(true);
 
         // setting up attack only if at that stage
@@ -133,7 +137,8 @@ public class GameManager : MonoBehaviour {
     }
     private void Incorrect()
     {
-        feedbackText.text = "GOTCHA BITCH";
+        int correct = (int) currentQuestion.ans;
+        feedbackText.text = "The correct answer was \"" + currentQuestion.answers[correct] + "\"";
     }
     public void Correct()
     {
