@@ -1,12 +1,10 @@
-public abstract class Card
-{
-    public abstract void Attack();
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-    public abstract void Defend();
+[CreateAssetMenu(fileName = "New Item", menuName = "Card")]
+public class Card : ScriptableObject {
 
-    public abstract void Heal();
-
-    public abstract void Buff();
-
-    public abstract void Debuff();
+    new public string name = "Temp";
+    public Sprite icon;
 }

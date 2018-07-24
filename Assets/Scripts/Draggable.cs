@@ -10,6 +10,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         origin = transform.position;
+        Debug.Log("BEGIN DRAG");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -20,5 +21,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.position = origin;
+        Debug.Log("END DRAG");
     }
 }
