@@ -13,7 +13,7 @@ public class CardUI : MonoBehaviour {
     {
         card = newCard;
 
-        icon.sprite = newCard.icon;
+        icon.sprite = newCard.artwork;
         icon.enabled = true;
     }
 
