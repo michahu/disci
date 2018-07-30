@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+// [System.Serializable]
 // [CreateAssetMenu(fileName = "Damage Component", menuName = "Components/Damage")]
 public class DamageComponent : CardComponent {
 
-    public int DamageValue;
+    private int DamageValue;
+
+    public DamageComponent(int value)
+    {
+        this.DamageValue = value;
+    } 
 
     public void Damage()
     {
-        Debug.Log("Dealt damage.");
+        Debug.Log("Dealt " + DamageValue + " damage.");
     }
 }
