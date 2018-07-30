@@ -25,7 +25,8 @@ public class DataController : MonoBehaviour {
 		
 	}
 
-    // not performant, will change in future
+    // surprisingly, this is optimal. Switch statements are implemented as jump table in C#.
+    // source: https://blogs.msdn.microsoft.com/abhinaba/2006/12/18/switches-and-jump-tables/
     void AddComponent(List<CardComponent> cardComponents, ComponentType componentType, int modifier)
     {
         switch (componentType)
