@@ -6,8 +6,7 @@ TagManager:
   tags:
   - MaterialButtonLayer
   - MaterialText
-  - Card
-  - Shop
+  - MaterialRadioButton
   layers:
   - Default
   - TransparentFX
