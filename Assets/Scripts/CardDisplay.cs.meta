@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 185650e0ffc2b45819161542251ee64c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameManager: {instanceID: 0}
+  - CardPrefab: {fileID: 1363150576973028, guid: 3e694118ed750427aa3ed98457d28b3c,
+      type: 2}
+  - target: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

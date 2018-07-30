@@ -11,10 +11,20 @@ public class ShopManager : MonoBehaviour {
     public CanvasGroup combat;
     public GameObject AdvButton; // shitty fix, wil remove
 
+    Transform cardUI;
+
     public void StartShop()
     {
         UpdateMoney();
         panel.SetActive(false);
+
+        // loading each card
+
+        // int i = 0;
+        foreach (GameObject card in GameObject.FindGameObjectsWithTag("Card")){
+            card.GetComponent<CardDisplay>().LoadCard();
+
+        }
     }
 
     public void OnClick()
@@ -36,6 +46,5 @@ public class ShopManager : MonoBehaviour {
     {
         moneyUI.text = Money.money.ToString();
     }
-
 
 }
