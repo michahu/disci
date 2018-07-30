@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Card")]
-public class Card : ScriptableObject {
+[System.Serializable]
+public class Card {
+
+    public List<CardComponent> cardComponents = new List<CardComponent>();
+
+    private void AddComponent(CardComponent c)
+    {
+        cardComponents.Add(c);
+    }
     
     public new string name;
     public Sprite artwork;

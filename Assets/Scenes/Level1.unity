@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1332,7 +1332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6989228947f4593a5439401250f489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -3521,7 +3520,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a53fb0f1f6c411a8045b18e31117c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 5d9dc10d353fc4d70bebde1ca1359ddd, type: 2}
+  card:
+    cardComponents: []
+    name: 
+    artwork: {fileID: 0}
+    description: 
+    cost: 0
   nameText: {fileID: 1665432846}
   artwork: {fileID: 1016813832}
   description: {fileID: 94459301}
@@ -3537,7 +3541,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 5d9dc10d353fc4d70bebde1ca1359ddd, type: 2}
+  card:
+    cardComponents: []
+    name: 
+    artwork: {fileID: 0}
+    description: 
+    cost: 0
   cardUI: {fileID: 114535124557724616, guid: 46cfd74f769349e44916c9b64542ad85, type: 2}
   combatParent: {fileID: 969146977}
 --- !u!114 &1097431187
@@ -3672,8 +3681,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1203448410}
   - component: {fileID: 1203448412}
-  - component: {fileID: 1203448411}
   - component: {fileID: 1203448413}
+  - component: {fileID: 1203448411}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3702,9 +3711,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1203448409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ab65af29b7924e6c97989fd0f80ab49, type: 3}
+  m_Script: {fileID: 11500000, guid: 79811640b3fb663488755de6d8025977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allCards:
+  - cards:
+    - cardComponents:
+      - componentType: 0
+        modifier: 3
+      name: Forge God's Sword
+      artwork: {fileID: 21300000, guid: 481203009d0144bec990c7f15162fafc, type: 3}
+      description: Deal 3 damage
+      cost: 1
 --- !u!114 &1203448412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4020,7 +4038,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 32fbc2707c39cd14bb12554212a566e1, type: 2}
+  card:
+    cardComponents: []
+    name: 
+    artwork: {fileID: 0}
+    description: 
+    cost: 0
   cardUI: {fileID: 114535124557724616, guid: 46cfd74f769349e44916c9b64542ad85, type: 2}
   combatParent: {fileID: 969146977}
 --- !u!1 &1259042498
@@ -6168,7 +6191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 44a8cfde33c7c1242b75d93f5257864c, type: 2}
+  card:
+    cardComponents: []
+    name: 
+    artwork: {fileID: 0}
+    description: 
+    cost: 0
   cardUI: {fileID: 114535124557724616, guid: 46cfd74f769349e44916c9b64542ad85, type: 2}
   combatParent: {fileID: 969146977}
 --- !u!1 &2053319248
