@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System.Linq;
 
 public class ShopManager : MonoBehaviour {
 
@@ -15,6 +16,20 @@ public class ShopManager : MonoBehaviour {
     {
         UpdateMoney();
         panel.SetActive(false);
+        // loading each card
+
+        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
+        cards.OrderBy(gameObject => gameObject.name).ToArray();
+        for (int j = 0; j < cards.Length; j++)
+        {
+            Debug.Log(cards[j].name);
+        }
+        int i = 0;
+        foreach (GameObject card in cards)
+        {
+            card.GetComponent<CardDisplay>().LoadCard(i);
+            i++;
+        }
     }
 
     public void OnClick()
