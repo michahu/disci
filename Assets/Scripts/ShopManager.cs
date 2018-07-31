@@ -12,18 +12,21 @@ public class ShopManager : MonoBehaviour {
     public CanvasGroup combat;
     public GameObject AdvButton; // shitty fix, wil remove
 
+    GameObject[] cards;
+
     public void StartShop()
     {
         UpdateMoney();
         panel.SetActive(false);
         // loading each card
 
-        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
-        cards.OrderBy(gameObject => gameObject.name).ToArray();
+        cards = GameObject.FindGameObjectsWithTag("Card").OrderBy(go => go.name).ToArray();;
+
         for (int j = 0; j < cards.Length; j++)
         {
             Debug.Log(cards[j].name);
         }
+
         int i = 0;
         foreach (GameObject card in cards)
         {
