@@ -14,4 +14,5 @@ public static class Money {
     {
         money -= i;
     }
+
 }

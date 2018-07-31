@@ -7,7 +7,8 @@ using System.Linq;
 public class ShopManager : MonoBehaviour {
 
     public Text moneyUI;
-    public GameObject panel;
+    public GameObject OutOfMoney;
+    public GameObject CannotAfford;
     public CanvasGroup shop;
     public CanvasGroup combat;
     public GameObject AdvButton; // shitty fix, wil remove
@@ -17,7 +18,8 @@ public class ShopManager : MonoBehaviour {
     public void StartShop()
     {
         UpdateMoney();
-        panel.SetActive(false);
+        OutOfMoney.SetActive(false);
+        CannotAfford.SetActive(false);
         // loading each card
 
         cards = GameObject.FindGameObjectsWithTag("Card").OrderBy(go => go.name).ToArray();;
@@ -35,19 +37,21 @@ public class ShopManager : MonoBehaviour {
         }
     }
 
-    public void OnClick()
+    public bool IsThereMoney(int cost)
     {
-        Money.SubtractMoney(1);
-        UpdateMoney();
-        CheckMoney();
-    }
-
-    public void CheckMoney() {
         if (Money.money <= 0)
         {
-            panel.SetActive(true);
-            // moneyUI.enabled = false;
+            OutOfMoney.SetActive(true);
+            return false;
         }
+
+        if (Money.money < cost)
+        {
+            CannotAfford.SetActive(true);
+            return false;
+        }
+
+        else return true;
     }
 
     public void UpdateMoney()
