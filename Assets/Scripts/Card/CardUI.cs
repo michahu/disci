@@ -5,23 +5,34 @@ using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour {
 
-    public Image icon;
+    public GameObject CardPrefab;
 
-    Card card; 
+    Transform ui;
+    Image artwork;
+    Text name;
+    Text description;
+    Text cost;
 
     public void AddCard(Card newCard)
     {
-        card = newCard;
+        ui = Instantiate(CardPrefab).transform;
+        ui.SetParent(this.transform);
+        ui.position = this.transform.position;
 
-        icon.sprite = newCard.artwork;
-        icon.enabled = true;
+        artwork = ui.GetChild(0).GetChild(0).GetComponent<Image>();
+        name = ui.GetChild(2).GetComponent<Text>();
+        description = ui.GetChild(3).GetComponent<Text>();
+        cost = ui.GetChild(4).GetComponent<Text>();
+
+        // uploading with desired components
+        artwork.sprite = newCard.artwork;
+        name.text = newCard.name;
+        description.text = newCard.description;
+        cost.text = newCard.cost.ToString();
     }
 
     public void Clear()
     {
-        card = null;
-
-        icon.sprite = null;
-        icon.enabled = false;
+        ui = null;
     }
 }

@@ -9,12 +9,13 @@ public class CardDisplay : MonoBehaviour
     public GameObject gameManager;
     public GameObject CardPrefab;
     public Transform target;
-    DataController dataController;
 
     Transform ui;
     CardData ShopCardData;
     Card[] AllCards;
-    Card template;
+
+    [HideInInspector]
+    public Card card;
 
     Image artwork;
     Text name;
@@ -30,7 +31,7 @@ public class CardDisplay : MonoBehaviour
         if (i < AllCards.Length)
         {
 
-            template = AllCards[i];
+            card = AllCards[i];
 
             // instantiate Card prefab
             ui = Instantiate(CardPrefab).transform;
@@ -44,10 +45,10 @@ public class CardDisplay : MonoBehaviour
             cost = ui.GetChild(4).GetComponent<Text>();
 
             // uploading with desired components
-            artwork.sprite = template.artwork;
-            name.text = template.name;
-            description.text = template.description;
-            cost.text = template.cost.ToString();
+            artwork.sprite = card.artwork;
+            name.text = card.name;
+            description.text = card.description;
+            cost.text = card.cost.ToString();
         }
 
     }

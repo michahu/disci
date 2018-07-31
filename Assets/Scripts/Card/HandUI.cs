@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class HandUI : MonoBehaviour {
 
-    public Transform combatGroup;
+    public Transform handParent;
 
     Hand hand;
 
-    CardUI[] cardUIs;
+    CardUI[] cardSlots;
 
 	// Use this for initialization
 	void Start () {
         hand = Hand.handInstance;
         hand.onItemChangedCallback += UpdateUI;
+        cardSlots = handParent.GetComponentsInChildren<CardUI>();
 	}
 	
 	// Update is called once per frame
@@ -22,17 +23,17 @@ public class HandUI : MonoBehaviour {
 
     void UpdateUI()
     {
-        cardUIs = combatGroup.GetComponentsInChildren<CardUI>();
-        for (int i = 0; i < cardUIs.Length; i++)
+        
+        for (int i = 0; i < cardSlots.Length; i++)
         {
             if (i < hand.cards.Count)
             {
-                cardUIs[i].AddCard(hand.cards[i]);
+                cardSlots[i].AddCard(hand.cards[i]);
                 Debug.Log("Added " + hand.cards[i].name);
             } else
             {
                 // highly suspect
-                cardUIs[i].Clear();
+                cardSlots[i].Clear();
             }
         }
         Debug.Log("UPDATE UI");

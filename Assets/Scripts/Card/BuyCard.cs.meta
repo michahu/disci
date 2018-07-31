@@ -3,7 +3,10 @@ guid: 7a674e9f546a8474a8db8dcde99255fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - target: {instanceID: 0}
+  - cardUI: {fileID: 114535124557724616, guid: 46cfd74f769349e44916c9b64542ad85, type: 2}
+  - combatParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

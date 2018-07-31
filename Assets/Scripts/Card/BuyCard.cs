@@ -2,14 +2,15 @@
 
 public class BuyCard : MonoBehaviour {
 
-    public Card card;
-    public CardUI cardUI;
-    public Transform combatParent;
+    public GameObject target;
+
+    Card card;
 
     public void Buy()
     {
+        card = target.GetComponent<CardDisplay>().card;
         Debug.Log("Buying card " + card.name);
-        Instantiate(cardUI, combatParent);
+
         Hand.handInstance.Add(card);
     }
 
