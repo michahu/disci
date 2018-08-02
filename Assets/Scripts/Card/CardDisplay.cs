@@ -35,7 +35,7 @@ public class CardDisplay : MonoBehaviour
 
             // instantiate Card prefab
             ui = Instantiate(CardPrefab).transform;
-            ui.SetParent(target.transform);
+            ui.transform.SetParent(target.transform, false);
             ui.position = target.position;
 
             // defining all components in instantiated prefab

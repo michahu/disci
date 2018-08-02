@@ -16,7 +16,7 @@ public class CardUI : MonoBehaviour {
     public void AddCard(Card newCard)
     {
         ui = Instantiate(CardPrefab).transform;
-        ui.SetParent(this.transform);
+        ui.SetParent(this.transform, false);
         ui.position = this.transform.position;
 
         artwork = ui.GetChild(0).GetChild(0).GetComponent<Image>();
