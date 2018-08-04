@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.EventSystems;
 
 public class ShopManager : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class ShopManager : MonoBehaviour {
     public GameObject AdvButton; // shitty fix, wil remove
 
     GameObject[] cards;
+    Card card;
 
     public void StartShop()
     {
@@ -22,7 +24,7 @@ public class ShopManager : MonoBehaviour {
         CannotAfford.SetActive(false);
         // loading each card
 
-        cards = GameObject.FindGameObjectsWithTag("Card").OrderBy(go => go.name).ToArray();;
+        cards = GameObject.FindGameObjectsWithTag("ShopCard").OrderBy(go => go.name).ToArray();;
 
         for (int j = 0; j < cards.Length; j++)
         {
@@ -32,9 +34,26 @@ public class ShopManager : MonoBehaviour {
         int i = 0;
         foreach (GameObject card in cards)
         {
-            card.GetComponent<CardDisplay>().LoadCard(i);
+            card.GetComponent<CardUI>().LoadCard(i);
             i++;
         }
+    }
+
+    public void Buy(GameObject target)
+    {
+        card = target.GetComponent<CardUI>().card;
+
+        if (IsThereMoney(card.cost))
+        {
+            Debug.Log("Buying card " + card.name);
+
+            Hand.handInstance.Add(card);
+
+            Money.SubtractMoney(card.cost);
+        }
+
+        else return;
+
     }
 
     public bool IsThereMoney(int cost)

@@ -310,11 +310,10 @@ GameObject:
   m_Component:
   - component: {fileID: 51039626}
   - component: {fileID: 51039627}
-  - component: {fileID: 51039629}
   - component: {fileID: 51039628}
   m_Layer: 5
   m_Name: D
-  m_TagString: Card
+  m_TagString: ShopCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,12 +344,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 51039625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2dd42eb0da24ab19d6ebbcb898e85a, type: 3}
+  m_Script: {fileID: 11500000, guid: cf51a1d8f9a911045b5d01e9df39595e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1203448409}
   CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2, type: 2}
-  target: {fileID: 51039626}
   card:
     cardComponents: []
     name: 
@@ -373,12 +371,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 51039629}
+        - m_Target: {fileID: 819463233}
           m_MethodName: Buy
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 51039625}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -398,19 +396,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &51039629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 51039625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopManager: {fileID: 819463231}
-  target: {fileID: 51039625}
 --- !u!1 &61064476
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,11 +405,10 @@ GameObject:
   m_Component:
   - component: {fileID: 61064477}
   - component: {fileID: 61064478}
-  - component: {fileID: 61064480}
   - component: {fileID: 61064479}
   m_Layer: 5
   m_Name: C
-  m_TagString: Card
+  m_TagString: ShopCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,12 +439,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 61064476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2dd42eb0da24ab19d6ebbcb898e85a, type: 3}
+  m_Script: {fileID: 11500000, guid: cf51a1d8f9a911045b5d01e9df39595e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1203448409}
   CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2, type: 2}
-  target: {fileID: 61064477}
   card:
     cardComponents: []
     name: 
@@ -483,12 +466,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 61064480}
+        - m_Target: {fileID: 819463233}
           m_MethodName: Buy
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 61064476}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -508,19 +491,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &61064480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 61064476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopManager: {fileID: 819463231}
-  target: {fileID: 61064476}
 --- !u!1 &134654546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,11 +1734,10 @@ GameObject:
   m_Component:
   - component: {fileID: 655901805}
   - component: {fileID: 655901806}
-  - component: {fileID: 655901808}
   - component: {fileID: 655901807}
   m_Layer: 5
   m_Name: B
-  m_TagString: Card
+  m_TagString: ShopCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1799,12 +1768,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 655901804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2dd42eb0da24ab19d6ebbcb898e85a, type: 3}
+  m_Script: {fileID: 11500000, guid: cf51a1d8f9a911045b5d01e9df39595e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1203448409}
   CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2, type: 2}
-  target: {fileID: 655901805}
   card:
     cardComponents: []
     name: 
@@ -1827,12 +1795,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 655901808}
+        - m_Target: {fileID: 819463233}
           m_MethodName: Buy
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 655901804}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1852,19 +1820,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &655901808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 655901804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopManager: {fileID: 819463231}
-  target: {fileID: 655901804}
 --- !u!1 &665491629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,11 +3440,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1427200791}
   - component: {fileID: 1427200792}
-  - component: {fileID: 1427200794}
   - component: {fileID: 1427200793}
   m_Layer: 5
   m_Name: A
-  m_TagString: Card
+  m_TagString: ShopCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3520,12 +3474,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427200790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2dd42eb0da24ab19d6ebbcb898e85a, type: 3}
+  m_Script: {fileID: 11500000, guid: cf51a1d8f9a911045b5d01e9df39595e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1203448409}
   CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2, type: 2}
-  target: {fileID: 1427200791}
   card:
     cardComponents: []
     name: 
@@ -3548,12 +3501,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1427200794}
+        - m_Target: {fileID: 819463233}
           m_MethodName: Buy
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1427200790}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3573,19 +3526,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &1427200794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1427200790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a674e9f546a8474a8db8dcde99255fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopManager: {fileID: 819463231}
-  target: {fileID: 1427200790}
 --- !u!1 &1501836609
 GameObject:
   m_ObjectHideFlags: 0

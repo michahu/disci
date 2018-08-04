@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - CardPrefab: {fileID: 1170530307709078, guid: 83fd2ea9ff7294cd9a0802357c10f2e2,
+  - gameManager: {instanceID: 0}
+  - CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
