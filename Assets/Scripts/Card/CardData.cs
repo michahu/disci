@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class CardData {
 
-    public Card[] cards;
+    public CardGroup[] cards;
 }

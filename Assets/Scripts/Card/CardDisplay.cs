@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardUI : MonoBehaviour {
+public class CardDisplay : MonoBehaviour
+{
 
     public GameObject gameManager;
     public GameObject CardPrefab;
+    public Transform target;
 
     Transform ui;
     CardGroup ShopCardData;
@@ -20,7 +22,6 @@ public class CardUI : MonoBehaviour {
     Text description;
     Text cost;
 
-    // for shop cards
     public void LoadCard(int i)
     {
         // setting the sample card and checking for null
@@ -34,8 +35,8 @@ public class CardUI : MonoBehaviour {
 
             // instantiate Card prefab
             ui = Instantiate(CardPrefab).transform;
-            ui.transform.SetParent(this.transform, false);
-            ui.position = this.transform.position;
+            ui.transform.SetParent(target.transform, false);
+            ui.position = target.position;
 
             // defining all components in instantiated prefab
             artwork = ui.GetChild(0).GetChild(0).GetComponent<Image>();
@@ -50,29 +51,5 @@ public class CardUI : MonoBehaviour {
             cost.text = card.cost.ToString();
         }
 
-    }
-
-    // for hand cards
-    public void AddCard(Card newCard)
-    {
-        ui = Instantiate(CardPrefab).transform;
-        ui.SetParent(this.transform, false);
-        ui.position = this.transform.position;
-
-        artwork = ui.GetChild(0).GetChild(0).GetComponent<Image>();
-        name = ui.GetChild(2).GetComponent<Text>();
-        description = ui.GetChild(3).GetComponent<Text>();
-        cost = ui.GetChild(4).GetComponent<Text>();
-
-        // uploading with desired components
-        artwork.sprite = newCard.artwork;
-        name.text = newCard.name;
-        description.text = newCard.description;
-        cost.text = newCard.cost.ToString();
-    }
-
-    public void Clear()
-    {
-        ui = null;
     }
 }

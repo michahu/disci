@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
-public class DataController : MonoBehaviour {
+public class CardController : MonoBehaviour {
 
-    public CardData[] allCards;
+    public CardGroup[] allCards;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,8 @@ public class DataController : MonoBehaviour {
             }
             c.cardComponents = temp;
         }
+
+        SaveGameData();
 	}
 	
 	// Update is called once per frame
@@ -56,9 +59,17 @@ public class DataController : MonoBehaviour {
             case ComponentType.Heal:
             {
                     cardComponents.Add(new HealComponent(modifier));
-                    Debug.Log("Not implemented");
+                    Debug.Log("Added Heal Component");
                     break;
             }
         }
+    }
+
+    private void SaveGameData()
+    {
+        string dataAsJson = JsonUtility.ToJson(allCards[0].cards);
+
+        string filePath = Application.dataPath + "/StreamingAssets/card.json";
+        File.WriteAllText(filePath, dataAsJson);
     }
 }
