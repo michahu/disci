@@ -22,6 +22,11 @@ public class CardController : MonoBehaviour {
 
         SaveGameData();
 	}
+
+    public CardGroup GetCardGroup(int i)
+    {
+        return allCards[i];
+    }
 	
 	// Update is called once per frame
 	void Update () {

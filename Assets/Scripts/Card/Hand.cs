@@ -4,36 +4,29 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    public static Hand handInstance;
+    #region Singleton
 
-    private void Awake()
+    public static Hand instance;
+
+    void Awake()
     {
-        if (handInstance != null)
-        {
-            Debug.Log("More than one hand instance");
-            return;
-        }
-        handInstance = this;
+        instance = this;
     }
 
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallback;
+    #endregion
+    
+    public List<GameObject> cards = new List<GameObject>();
 
-    public List<Card> cards = new List<Card>();
-
-    public void Add(Card c)
+    public void Add(GameObject card)
     {
-        cards.Add(c);
-
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+        cards.Add(card);
+        card.transform.SetParent(this.transform);
+        Debug.Log("Card added to hand.");
     }
 
-    public void Remove(Card c)
+    public void Remove(GameObject card)
     {
-        cards.Remove(c);
-
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+        cards.Remove(card);
+        Destroy(card);
     }
 }

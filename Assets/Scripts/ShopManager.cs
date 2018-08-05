@@ -10,46 +10,47 @@ public class ShopManager : MonoBehaviour {
     public Text moneyUI;
     public GameObject OutOfMoney;
     public GameObject CannotAfford;
-    public CanvasGroup shop;
-    public CanvasGroup combat;
-    public GameObject AdvButton; // shitty fix, wil remove
 
-    GameObject[] cards;
-    Card card;
+    public GameObject CardPrefab;
 
-    public void StartShop()
+    public void Start()
     {
         UpdateMoney();
         OutOfMoney.SetActive(false);
         CannotAfford.SetActive(false);
+
         // loading each card
 
-        cards = GameObject.FindGameObjectsWithTag("ShopCard").OrderBy(go => go.name).ToArray();;
+        // there is potentially better way
+        Card[] cards = GameManager.instance.GetComponent<CardController>()
+            .GetCardGroup(0).GetCards();
 
-        for (int j = 0; j < cards.Length; j++)
+        for (int i = 0; i < cards.Length; i++)
         {
-            Debug.Log(cards[j].name);
-        }
+            Card c = cards[i];
+            GameObject card = Instantiate(CardPrefab);
+            card.transform.SetParent(this.transform);
 
-        int i = 0;
-        foreach (GameObject card in cards)
-        {
-            card.GetComponent<CardUI>().LoadCard(i);
-            i++;
+            card.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
+            card.transform.GetChild(2).GetComponent<Text>().text = c.name;
+            card.transform.GetChild(3).GetComponent<Text>().text = c.description ;
+            card.transform.GetChild(4).GetComponent<Text>().text = c.cost.ToString();
+
+            card.GetComponent<CardHelper>().card = c;
         }
     }
 
-    public void Buy(GameObject target)
+    public void Buy(GameObject card)
     {
-        card = target.GetComponent<CardUI>().card;
+        CardHelper c = card.GetComponent<CardHelper>();
 
-        if (IsThereMoney(card.cost))
+        if (IsThereMoney(c.card.cost))
         {
             Debug.Log("Buying card " + card.name);
 
-            Hand.handInstance.Add(card);
+            Hand.instance.Add(card);
 
-            Money.SubtractMoney(card.cost);
+            Money.SubtractMoney(c.card.cost);
         }
 
         else return;

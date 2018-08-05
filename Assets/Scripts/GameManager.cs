@@ -8,6 +8,8 @@ using System;
 public class GameManager : MonoBehaviour {
     public Question[] questions;
 
+    public static GameManager instance;
+
     // canvas groups control the gameflow
     public CanvasGroup qa;
     public CanvasGroup feedback;
@@ -29,10 +31,6 @@ public class GameManager : MonoBehaviour {
     // moving between canvas groups
     private CanvasGroup[] canvasGroups;
     private int gameState;
-    public GameObject trans;
-
-    // turning on combat system
-    public static bool inCombat;
 
     /*
      * 0 = qa
@@ -41,11 +39,16 @@ public class GameManager : MonoBehaviour {
      * 3 = combat
      */
 
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
+    }
+
     public void Start()
     {
         canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
         gameState = 0;
-        trans.SetActive(false);
 
         if (unanswered == null || unanswered.Count == 0)
         {
@@ -53,20 +56,17 @@ public class GameManager : MonoBehaviour {
         }
         GetQuestion();
     }
+
+    // don't like this
     public void Advance()
     {
         gameState = mod(gameState + 1, 4);
-        // Debug.Log("GAMESTATE: " + gameState);
+        Debug.Log("GAMESTATE: " + gameState);
         Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
         if (gameState == 0)
         {
             GetQuestion();
-            trans.SetActive(false);
         }
-        else trans.SetActive(true);
-
-        // setting up attack only if at that stage
-        if (gameState == 3) inCombat = true;
     }
 
     private int mod(int x, int m)

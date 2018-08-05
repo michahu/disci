@@ -15,7 +15,7 @@ public class DropZone : MonoBehaviour, IDropHandler {
             d.returnParent = this.transform;
         }
 
-        Card c = eventData.pointerDrag.GetComponent<CardUI>().card;
+        Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;
         if (c != null)
         {
             c.onPlay();
