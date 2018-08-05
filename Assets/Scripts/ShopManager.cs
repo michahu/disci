@@ -10,6 +10,7 @@ public class ShopManager : MonoBehaviour {
     public Text moneyUI;
     public GameObject OutOfMoney;
     public GameObject CannotAfford;
+    public Hand hand;
 
     public GameObject CardPrefab;
 
@@ -48,7 +49,7 @@ public class ShopManager : MonoBehaviour {
         {
             Debug.Log("Buying card " + card.name);
 
-            Hand.instance.Add(card);
+            hand.Add(card);
 
             Money.SubtractMoney(c.card.cost);
         }

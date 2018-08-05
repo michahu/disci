@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    #region Singleton
-
-    public static Hand instance;
-
-    void Awake()
-    {
-        instance = this;
-    }
-
-    #endregion
     
     public List<GameObject> cards = new List<GameObject>();
+    public Transform test;
 
     public void Add(GameObject card)
     {
+        Debug.Log(this.gameObject.ToString());
         cards.Add(card);
-        card.transform.SetParent(this.transform);
+        Debug.Log("THIS TRANSFORM IS: " + test);
+        card.transform.SetParent(test);
         Debug.Log("Card added to hand.");
     }
 

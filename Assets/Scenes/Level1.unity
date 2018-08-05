@@ -1067,7 +1067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff36f2e819d6fb46bea5d17ee877707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wtf: {fileID: 0}
   cards: []
 --- !u!1 &342476166
 GameObject:
@@ -2537,7 +2536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff36f2e819d6fb46bea5d17ee877707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wtf: {fileID: 0}
   cards: []
 --- !u!1 &1219988182
 GameObject:

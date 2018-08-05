@@ -6,9 +6,19 @@ using UnityEngine;
 using System;
 
 public class GameManager : MonoBehaviour {
-    public Question[] questions;
+
+    #region Singleton
 
     public static GameManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
+    public Question[] questions;
 
     // canvas groups control the gameflow
     public CanvasGroup qa;
@@ -38,12 +48,6 @@ public class GameManager : MonoBehaviour {
      * 2 = shop
      * 3 = combat
      */
-
-    private void Awake()
-    {
-        if (instance == null) instance = this;
-        else if (instance != this) Destroy(gameObject);
-    }
 
     public void Start()
     {
