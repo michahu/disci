@@ -13,7 +13,7 @@ public class DamageComponent : CardComponent {
         this.DamageValue = value;
     } 
 
-    public void Damage()
+    public override void Action()
     {
         Debug.Log("Dealt " + DamageValue + " damage.");
     }

@@ -12,6 +12,14 @@ public class Card {
         cardComponents.Add(c);
     }
     
+    public void onPlay()
+    {
+        foreach (CardComponent c in cardComponents)
+        {
+            c.Action();
+        }
+    }
+
     public new string name;
     public Sprite artwork;
     public string description;

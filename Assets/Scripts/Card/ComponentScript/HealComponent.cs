@@ -11,7 +11,7 @@ public class HealComponent : CardComponent {
         this.HealValue = value;
     }
 
-    public void Heal()
+    public virtual void Heal()
     {
         Debug.Log("Armored up for " + HealValue + " .");
     }

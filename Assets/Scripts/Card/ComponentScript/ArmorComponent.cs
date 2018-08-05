@@ -11,7 +11,7 @@ public class ArmorComponent : CardComponent {
         this.ArmorValue = value;
     }
 
-    public void Armor()
+    public virtual void Action()
     {
         Debug.Log("Armored up for " + ArmorValue + " .");
     }
