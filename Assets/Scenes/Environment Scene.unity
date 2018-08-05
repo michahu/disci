@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7982f8059d94be0a08743d91e06a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guiObject: {fileID: 0}
+  guiObject: {fileID: 480652579}
   Level1: 
 --- !u!1001 &492868234
 Prefab:
