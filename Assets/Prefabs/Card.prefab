@@ -196,7 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c02b76204cc26a4d9541898141604ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  card:
+    cardComponents: []
+    name: 
+    artwork: {fileID: 0}
+    description: 
+    cost: 0
 --- !u!114 &114332664945664436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +475,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -296, y: -267}
-  m_SizeDelta: {x: 140, y: 200}
+  m_SizeDelta: {x: 0, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224829524845158578
 RectTransform:

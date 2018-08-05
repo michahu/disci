@@ -1031,9 +1031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066036f863fbca14fb696b6e9508bf3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handParent: {fileID: 283751039}
-  hand: {fileID: 0}
-  cardSlots: []
 --- !u!114 &283751043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
+  test: {fileID: 283751039}
 --- !u!1 &342476166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,6 +2535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
+  test: {fileID: 0}
 --- !u!1 &1219988182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,7 +4235,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 100
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -4255,6 +4254,7 @@ MonoBehaviour:
   moneyUI: {fileID: 2053319250}
   OutOfMoney: {fileID: 1671636500}
   CannotAfford: {fileID: 1865877836}
+  hand: {fileID: 283751044}
   CardPrefab: {fileID: 1435741324012746, guid: 83fd2ea9ff7294cd9a0802357c10f2e2, type: 2}
 --- !u!1 &2009856083
 GameObject:
