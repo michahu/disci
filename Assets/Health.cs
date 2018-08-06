@@ -4,39 +4,47 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
-    
+
+    public GameObject target;
     public Text health;
     public Text armor;
 
-    int CurrentHealth;
-    int MaxHealth;
-    int CurrentArmor;
+    public int MyCurrentHealth;
+    public int MyCurrentArmor;
+    int MyMaxHealth;
+
+    int EnemyHealth;
+    int EnemyArmor;
 
 	// Use this for initialization
 	void Start () {
 
-        CurrentArmor = 0;
-        MaxHealth = 10;
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+        MyCurrentArmor = 0;
+        MyMaxHealth = 10;
+        MyCurrentHealth = Mathf.Clamp(MyCurrentHealth, 0, MyMaxHealth);
+        MyCurrentArmor = Mathf.Clamp(MyCurrentArmor, 0, int.MaxValue);
 
-        health.text = MaxHealth.ToString();
-        armor.text = CurrentArmor.ToString();
+        EnemyHealth = target.GetComponentInChildren<Health>().MyCurrentHealth;
+        EnemyArmor = target.GetComponentInChildren<Health>().MyCurrentArmor;
+
+        health.text = MyMaxHealth.ToString();
+        armor.text = MyCurrentArmor.ToString();
 	}
 	
 	// Update is called once per frame
 	public void UpdateStats () {
 
-        health.text = CurrentHealth.ToString();
-        armor.text = CurrentArmor.ToString();
+        health.text = MyCurrentHealth.ToString();
+        armor.text = MyCurrentArmor.ToString();
 	}
 
     public void Attack (int DamageValue) {
 
         DamageValue = Mathf.Clamp(DamageValue, 0, int.MaxValue);
-        CurrentHealth -= DamageValue;
+        EnemyHealth = EnemyHealth + EnemyArmor - DamageValue;
         UpdateStats();
 
-        if (CurrentArmor <= 0)
+        if (EnemyHealth <= 0)
         {
             Die();
 
@@ -45,19 +53,18 @@ public class Health : MonoBehaviour {
 
     public void Armor (int ArmorValue) {
         
-        CurrentArmor += ArmorValue;
-        if (CurrentArmor < 0) CurrentArmor = 0;
+        MyCurrentArmor += ArmorValue;
         UpdateStats();
     }
 
     public void Heal (int HealValue) {
 
-        CurrentHealth += HealValue;
+        MyCurrentHealth += HealValue;
         UpdateStats();
     }
 
     public virtual void Die() {
-        Debug.Log("Player died.");
+        Debug.Log("Enemy died.");
     }
 
 }
