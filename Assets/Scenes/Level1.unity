@@ -730,7 +730,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 218683837}
-  - component: {fileID: 218683838}
   m_Layer: 5
   m_Name: EnemyStatsUI
   m_TagString: Untagged
@@ -758,22 +757,6 @@ RectTransform:
   m_AnchoredPosition: {x: 28, y: -57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &218683838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 218683836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccd559b4462c4631a900f836d76b32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2009856083}
-  health: {fileID: 37449352}
-  armor: {fileID: 328191994}
-  MyCurrentHealth: 0
-  MyCurrentArmor: 0
 --- !u!1 &236892617
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,6 +4220,8 @@ GameObject:
   - component: {fileID: 1701301943}
   - component: {fileID: 1701301942}
   - component: {fileID: 1701301947}
+  - component: {fileID: 1701301945}
+  - component: {fileID: 1701301944}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -4297,6 +4282,32 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701301940}
   m_CullTransparentMesh: 0
+--- !u!114 &1701301944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57a3828eb8c249078866f28b3c65929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 37449352}
+  armor: {fileID: 328191994}
+--- !u!114 &1701301945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2f5831c979b4280bfd1c5057671b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  armor: 0
 --- !u!95 &1701301947
 Animator:
   serializedVersion: 3
@@ -4610,7 +4621,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1821469570}
-  - component: {fileID: 1821469571}
   m_Layer: 5
   m_Name: PlayerStatsUI
   m_TagString: Untagged
@@ -4638,22 +4648,6 @@ RectTransform:
   m_AnchoredPosition: {x: 39.1, y: -72.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1821469571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1821469569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccd559b4462c4631a900f836d76b32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1701301940}
-  health: {fileID: 180076004}
-  armor: {fileID: 845268609}
-  MyCurrentHealth: 0
-  MyCurrentArmor: 0
 --- !u!1 &1836657321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,6 +4950,8 @@ GameObject:
   - component: {fileID: 2009856087}
   - component: {fileID: 2009856091}
   - component: {fileID: 2009856088}
+  - component: {fileID: 2009856090}
+  - component: {fileID: 2009856089}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -5039,6 +5035,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0670555cb9ec54a9cbb78e94ed338ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2009856089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57a3828eb8c249078866f28b3c65929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 180076004}
+  armor: {fileID: 845268609}
+--- !u!114 &2009856090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009856083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621284e90829043be8422154e97d07bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  armor: 0
 --- !u!95 &2009856091
 Animator:
   serializedVersion: 3
