@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats {
 
+    string EndGame = "You lost!";
+
 	// Use this for initialization
 	void Start () {
         
@@ -13,5 +15,7 @@ public class PlayerStats : CharacterStats {
     public override void Die()
     {
         base.Die();
+
+        GameManager.instance.EndRound(EndGame);
     }
 }

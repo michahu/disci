@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats {
 
+    string EndGame = "You won!";
+
     public override void Die()
     {
         base.Die();
 
-        // Add ragdoll effect/ death animation
+        // Add death animation??
 
-        Destroy(gameObject);
+        GameManager.instance.EndRound(EndGame);
     }
 }

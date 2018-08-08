@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -41,6 +42,9 @@ public class GameManager : MonoBehaviour {
     // moving between canvas groups
     private CanvasGroup[] canvasGroups;
     private int gameState;
+
+    // end round
+    public GameObject RoundOverPanel;
 
     /*
      * 0 = qa
@@ -148,6 +152,17 @@ public class GameManager : MonoBehaviour {
     {
         Money.AddMoney(1);
         feedbackText.text = "Correct!";
+    }
+
+    public void EndRound (string EndGame) 
+    {
+        RoundOverPanel.SetActive(true);
+        RoundOverPanel.GetComponentInChildren<Text>().text = EndGame;
+    }
+
+    public void ReturnToEnvironment() 
+    {
+        SceneManager.LoadScene("Environment Scene");
     }
 }
 
