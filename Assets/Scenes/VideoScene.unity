@@ -446,6 +446,7 @@ RectTransform:
   - {fileID: 272969272}
   - {fileID: 1928823104}
   - {fileID: 154728073}
+  - {fileID: 2005340339}
   - {fileID: 1177344405}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -466,6 +467,7 @@ GameObject:
   - component: {fileID: 1177344408}
   - component: {fileID: 1177344407}
   - component: {fileID: 1177344406}
+  - component: {fileID: 1177344409}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -485,7 +487,7 @@ RectTransform:
   m_Children:
   - {fileID: 1647959678}
   m_Father: {fileID: 488154626}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -567,6 +569,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1177344404}
   m_CullTransparentMesh: 0
+--- !u!114 &1177344409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177344404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2005340338}
+          m_MethodName: SceneLoader
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1647959677
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +651,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2005340338}
+        - m_Target: {fileID: 0}
           m_MethodName: SceneLoader
           m_Mode: 3
           m_Arguments:
@@ -665,7 +697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next
+  m_Text: To Battle
 --- !u!222 &1647959681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -926,10 +958,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2005340337}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 680.13556, y: 101.31922, z: -2.1798465}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 355.13556, y: -93.68078, z: -2.1798465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 488154626}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
