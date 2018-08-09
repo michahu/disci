@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneTrigger : MonoBehaviour {
@@ -8,12 +7,12 @@ public class SceneTrigger : MonoBehaviour {
     public string LevelToLoad;
 
 	void Start () {
-        guiObject.SetActive(false);
         
-		
+        guiObject.SetActive(false);
+
 	}
-	
-    void OnTriggerStay (Collider other) {
+	// can be OnTriggerStay
+    void OnTriggerEnter (Collider other) {
 
         if (other.gameObject.tag == "Player") {
 
