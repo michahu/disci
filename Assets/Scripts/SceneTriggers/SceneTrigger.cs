@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneTrigger : MonoBehaviour {
 
     public GameObject guiObject;
-    public string Level1;
+    public string LevelToLoad;
 
 	void Start () {
         guiObject.SetActive(false);
@@ -22,7 +22,7 @@ public class SceneTrigger : MonoBehaviour {
             if (guiObject.activeInHierarchy == true && Input.GetButtonDown("Use"))
             {
 
-                Application.LoadLevel(Level1);
+                Application.LoadLevel(LevelToLoad);
             }
         }
 		
