@@ -47,7 +47,7 @@ public class ShopManager : MonoBehaviour {
 
         if (IsThereMoney(c.card.cost))
         {
-            Debug.Log("Buying card " + card.name);
+            Debug.Log("Buying card " + c.name);
 
             hand.Add(card);
 

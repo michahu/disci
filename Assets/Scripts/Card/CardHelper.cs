@@ -11,6 +11,7 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log(this.gameObject.ToString());
         this.gameObject.GetComponentInParent<ShopManager>().Buy(this.gameObject);
     }
 }
