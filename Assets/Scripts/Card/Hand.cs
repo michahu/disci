@@ -4,22 +4,45 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    
-    public List<GameObject> cards = new List<GameObject>();
-    public Transform test;
+    private List<GameObject> cardsInHand = new List<GameObject>();
+    private int HAND_SIZE = 6;
+
+    private Deck d;
+
+    public void Start()
+    {
+        d = Deck.deckInstance;
+    }
+
+    public void OnCombatBegin()
+    {
+        d.ShuffleDeck();
+
+        for (int i = 0; i < d.cardsInDeck.Count && i < HAND_SIZE; i++)
+        {
+            Add(d.Draw());
+            Debug.Log("Occurred " + i);
+        }
+    }
 
     public void Add(GameObject card)
     {
-        Debug.Log(this.gameObject.ToString());
-        cards.Add(card);
-        Debug.Log("THIS TRANSFORM IS: " + test);
-        card.transform.SetParent(test);
-        Debug.Log("Card added to hand.");
+        // Debug.Log(this.gameObject.ToString());
+        cardsInHand.Add(card);
+        card.transform.SetParent(this.transform);
     }
 
-    public void Remove(GameObject card)
+    // there's something odd about the transform business that
+    // I need to think about
+    public void OnCombatEnd()
     {
-        cards.Remove(card);
-        Destroy(card);
+        d.cardsInDeck.AddRange(cardsInHand);
+        cardsInHand.Clear();
+        d.ShuffleDeck();
+
+        foreach (Transform t in this.transform)
+        {
+            t.transform.SetParent(Deck.deckInstance.transform);
+        }
     }
 }
