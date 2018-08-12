@@ -16,11 +16,7 @@ public class ShopManager : MonoBehaviour {
 
     public void Start()
     {
-        UpdateMoney();
-        OutOfMoney.SetActive(false);
-        CannotAfford.SetActive(false);
-
-        // loading each card
+        OnShop();
 
         // there is potentially better way
         Card[] cards = GameManager.instance.GetComponent<CardController>()
@@ -29,16 +25,15 @@ public class ShopManager : MonoBehaviour {
         for (int i = 0; i < cards.Length; i++)
         {
             Card c = cards[i];
-            GameObject card = Instantiate(CardPrefab);
-            card.transform.SetParent(this.transform);
-
-            card.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
-            card.transform.GetChild(2).GetComponent<Text>().text = c.name;
-            card.transform.GetChild(3).GetComponent<Text>().text = c.description ;
-            card.transform.GetChild(4).GetComponent<Text>().text = c.cost.ToString();
-
-            card.GetComponent<CardHelper>().card = c;
+            GameObject card = CreateCard(c);
         }
+    }
+
+    public void OnShop()
+    {
+        UpdateMoney();
+        OutOfMoney.SetActive(false);
+        CannotAfford.SetActive(false);
     }
 
     public void Buy(GameObject card)
@@ -49,9 +44,11 @@ public class ShopManager : MonoBehaviour {
         {
             Debug.Log("Buying card " + c.name);
 
-            hand.Add(card);
+            hand.Add(CopyCard(card));
 
             Money.SubtractMoney(c.card.cost);
+
+            UpdateMoney();
         }
 
         else return;
@@ -80,5 +77,35 @@ public class ShopManager : MonoBehaviour {
         moneyUI.text = Money.money.ToString();
     }
 
+    public GameObject CreateCard(Card c)
+    {
+        GameObject newCard = Instantiate(CardPrefab);
+        newCard.transform.SetParent(this.transform);
 
+        newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
+        newCard.transform.GetChild(2).GetComponent<Text>().text = c.name;
+        newCard.transform.GetChild(3).GetComponent<Text>().text = c.description;
+        newCard.transform.GetChild(4).GetComponent<Text>().text = c.cost.ToString();
+
+        newCard.GetComponent<CardHelper>().card = c;
+
+        return newCard;
+    }
+
+
+    public GameObject CopyCard(GameObject card)
+    {
+        GameObject newCard = Instantiate(CardPrefab);
+        newCard.transform.SetParent(this.transform);
+
+        newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite
+            = card.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite;
+        newCard.transform.GetChild(2).GetComponent<Text>().text = card.transform.GetChild(2).GetComponent<Text>().text;
+        newCard.transform.GetChild(3).GetComponent<Text>().text = card.transform.GetChild(3).GetComponent<Text>().text;
+        newCard.transform.GetChild(4).GetComponent<Text>().text = card.transform.GetChild(4).GetComponent<Text>().text;
+
+        newCard.GetComponent<CardHelper>().card = card.GetComponent<CardHelper>().card;
+
+        return newCard;
+    }
 }
