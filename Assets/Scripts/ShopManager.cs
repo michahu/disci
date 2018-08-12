@@ -10,13 +10,13 @@ public class ShopManager : MonoBehaviour {
     public Text moneyUI;
     public GameObject OutOfMoney;
     public GameObject CannotAfford;
-    public Hand hand;
-
+    public Deck deck;
     public GameObject CardPrefab;
 
     public void Start()
     {
         OnShop();
+        deck = Deck.deckInstance;
 
         // there is potentially better way
         Card[] cards = GameManager.instance.GetComponent<CardController>()
@@ -43,16 +43,11 @@ public class ShopManager : MonoBehaviour {
         if (IsThereMoney(c.card.cost))
         {
             Debug.Log("Buying card " + c.name);
-
-            hand.Add(CopyCard(card));
-
+            deck.Add(CopyCard(card));
             Money.SubtractMoney(c.card.cost);
-
             UpdateMoney();
         }
-
         else return;
-
     }
 
     public bool IsThereMoney(int cost)
@@ -62,13 +57,11 @@ public class ShopManager : MonoBehaviour {
             OutOfMoney.SetActive(true);
             return false;
         }
-
         if (Money.money < cost)
         {
             CannotAfford.SetActive(true);
             return false;
         }
-
         else return true;
     }
 

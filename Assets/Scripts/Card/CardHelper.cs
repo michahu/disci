@@ -11,7 +11,10 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(this.gameObject.ToString());
+        // Debug.Log(this.gameObject.ToString());
+
+        // bandaid fix?
+        if (this.transform.parent.name == "Shop Panel")
         this.gameObject.GetComponentInParent<ShopManager>().Buy(this.gameObject);
     }
 }

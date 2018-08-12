@@ -8,16 +8,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    #region Singleton
-
     public static GameManager instance;
 
-    void Awake()
-    {
-        instance = this;
-    }
+    public static GameManager Instance { get { return instance; } }
 
-    #endregion
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     public Question[] questions;
 

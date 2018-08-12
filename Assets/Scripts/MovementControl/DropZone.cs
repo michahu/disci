@@ -20,5 +20,13 @@ public class DropZone : MonoBehaviour, IDropHandler {
         {
             c.onPlay();
         }
+    } 
+
+    public void OnCombatEnd()
+    {
+        foreach (Transform t in this.transform)
+        {
+            t.transform.SetParent(Deck.deckInstance.transform);
+        }
     }
 }
