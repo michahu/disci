@@ -48,8 +48,12 @@ public class GameManager : MonoBehaviour {
     private CanvasGroup[] canvasGroups;
     private int gameState;
 
-    // end round
+    // end round and timers
     public GameObject RoundOverPanel;
+    public Text timeRemainingPanel;
+    private bool isQuestionActive;
+    private float timeRemaining;
+    private float timeTotal = 10f;
 
     /*
      * 0 = qa
@@ -89,6 +93,9 @@ public class GameManager : MonoBehaviour {
     }
     void GetQuestion()
     {
+        isQuestionActive = true;
+        timeRemaining = timeTotal;
+
         int rand = UnityEngine.Random.Range(0, unanswered.Count);
         currentQuestion = unanswered[rand];
 
@@ -151,13 +158,35 @@ public class GameManager : MonoBehaviour {
     }
     private void Incorrect()
     {
+        isQuestionActive = false;
         int correct = (int) currentQuestion.ans;
         feedbackText.text = "The correct answer was \"" + currentQuestion.answers[correct] + "\"";
     }
     public void Correct()
     {
+        isQuestionActive = false;
         Money.AddMoney(1);
         feedbackText.text = "Correct!";
+    }
+
+    private void UpdateTimeRemaining()
+    {
+        timeRemainingPanel.text = "Time: " + Mathf.Round(timeRemaining).ToString();
+    }
+
+    void Update ()
+    {
+        if (isQuestionActive)
+        {
+            timeRemaining -= Time.deltaTime;
+            UpdateTimeRemaining();
+
+            if (timeRemaining <= 0f)
+            {
+                Incorrect();
+                Advance();
+            }
+        }
     }
 
     public void EndRound (string EndGame) 
