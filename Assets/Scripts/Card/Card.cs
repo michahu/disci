@@ -14,6 +14,7 @@ public class Card {
     
     public void onPlay()
     {
+        PlayerStats.playerStatsInstance.Mana(this.manaCost);
         foreach (CardComponent c in cardComponents)
         {
             c.Action();
@@ -23,5 +24,6 @@ public class Card {
     public new string name;
     public Sprite artwork;
     public string description;
-    public int cost;
+    public int goldCost;
+    public int manaCost;
 }

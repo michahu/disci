@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour {
         if (gameState == 0)
         {
             GetQuestion();
+            PlayerStats.playerStatsInstance.ResetMana();
         }
     }
 

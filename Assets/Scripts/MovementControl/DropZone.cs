@@ -10,16 +10,19 @@ public class DropZone : MonoBehaviour, IDropHandler {
         Debug.Log("DROP FIRE");
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        if (d != null)
+        Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;
+
+        if (d != null && c.manaCost <= PlayerStats.playerStatsInstance.mana)
         {
             d.returnParent = this.transform;
+
+            if (c != null)
+            {
+                c.onPlay();
+            }
         }
 
-        Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;
-        if (c != null)
-        {
-            c.onPlay();
-        }
+       
     } 
 
     public void OnCombatEnd()

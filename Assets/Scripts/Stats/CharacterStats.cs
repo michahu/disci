@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour {
 
     public int armor;
 
-    // alerting health ui of damage taken
+    // alerting health and armor changes
     public event System.Action<int> OnHealthChanged;
     public event System.Action<int> OnArmorChanged;
 

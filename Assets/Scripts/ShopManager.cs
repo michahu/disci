@@ -40,11 +40,11 @@ public class ShopManager : MonoBehaviour {
     {
         CardHelper c = card.GetComponent<CardHelper>();
 
-        if (IsThereMoney(c.card.cost))
+        if (IsThereMoney(c.card.goldCost))
         {
             Debug.Log("Buying card " + c.name);
             deck.Add(CopyCard(card));
-            Money.SubtractMoney(c.card.cost);
+            Money.SubtractMoney(c.card.goldCost);
             UpdateMoney();
         }
         else return;
@@ -78,7 +78,8 @@ public class ShopManager : MonoBehaviour {
         newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
         newCard.transform.GetChild(2).GetComponent<Text>().text = c.name;
         newCard.transform.GetChild(3).GetComponent<Text>().text = c.description;
-        newCard.transform.GetChild(4).GetComponent<Text>().text = c.cost.ToString();
+        newCard.transform.GetChild(4).GetComponent<Text>().text = c.goldCost.ToString();
+        newCard.transform.GetChild(5).GetComponent<Text>().text = c.manaCost.ToString();
 
         newCard.GetComponent<CardHelper>().card = c;
 
@@ -96,6 +97,7 @@ public class ShopManager : MonoBehaviour {
         newCard.transform.GetChild(2).GetComponent<Text>().text = card.transform.GetChild(2).GetComponent<Text>().text;
         newCard.transform.GetChild(3).GetComponent<Text>().text = card.transform.GetChild(3).GetComponent<Text>().text;
         newCard.transform.GetChild(4).GetComponent<Text>().text = card.transform.GetChild(4).GetComponent<Text>().text;
+        newCard.transform.GetChild(5).GetComponent<Text>().text = card.transform.GetChild(5).GetComponent<Text>().text;
 
         newCard.GetComponent<CardHelper>().card = card.GetComponent<CardHelper>().card;
 

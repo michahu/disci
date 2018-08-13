@@ -24,9 +24,11 @@ public class PlayerStats : CharacterStats {
     string EndGame = "You lost!";
 
     public int maxHealth = 10;
+    public int mana = 5;
 
     public Text healthText;
     public Text armorText;
+    public Text manaText;
 
     private void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerStats : CharacterStats {
 
         healthText.text = currentHealth.ToString();
         armorText.text = armor.ToString();
+        manaText.text = mana.ToString();
 
         GetComponent<CharacterStats>().OnHealthChanged += OnHealthTextChanged;
         GetComponent<CharacterStats>().OnArmorChanged += OnArmorTextChanged;
@@ -58,5 +61,18 @@ public class PlayerStats : CharacterStats {
     void OnArmorTextChanged(int newArmor)
     {
         armorText.text = newArmor.ToString();
+    }
+
+    public void Mana(int cost)
+    {
+        mana -= cost;
+        manaText.text = mana.ToString();
+    }
+
+    // shitty fix
+    public void ResetMana()
+    {
+        mana = 5;
+        manaText.text = mana.ToString();
     }
 }
