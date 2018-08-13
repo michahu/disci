@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
+    public float moveSpeed;
+
 	void Start () {
 
-
+        moveSpeed = 2f;
 		
 	}
 	
 	void Update () {
 
 
-        transform.Translate(Input.GetAxis("Horizontal")*Time.deltaTime, 0f, Input.GetAxis("Vertical")*Time.deltaTime);
+        transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime, 0f, moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
 
 		
 	}
