@@ -13,6 +13,7 @@ public class HealComponent : CardComponent {
 
     public override void Action()
     {
+        PlayerStats.playerStatsInstance.animator.SetTrigger("Heal");
         PlayerStats.playerStatsInstance.Heal(HealValue);
     }
 }

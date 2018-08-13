@@ -13,6 +13,7 @@ public class DamageComponent : CardComponent {
 
     public override void Action()
     {
+        PlayerStats.playerStatsInstance.animator.SetTrigger("Attack");
         EnemyStats.enemyStatsInstance.Damage(DamageValue);
     }
 }

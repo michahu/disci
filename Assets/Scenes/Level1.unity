@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6989228947f4593a5439401250f489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -4724,7 +4725,6 @@ GameObject:
   - component: {fileID: 1701301942}
   - component: {fileID: 1701301947}
   - component: {fileID: 1701301945}
-  - component: {fileID: 1701301944}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -4785,19 +4785,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701301940}
   m_CullTransparentMesh: 0
---- !u!114 &1701301944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1701301940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57a3828eb8c249078866f28b3c65929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 37449352}
-  armor: {fileID: 328191994}
 --- !u!114 &1701301945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4809,8 +4796,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2f5831c979b4280bfd1c5057671b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  currentHealth: 0
   armor: 0
+  maxHealth: 10
+  healthText: {fileID: 37449352}
+  armorText: {fileID: 328191994}
 --- !u!95 &1701301947
 Animator:
   serializedVersion: 3
@@ -5452,7 +5442,6 @@ GameObject:
   - component: {fileID: 2009856094}
   - component: {fileID: 2009856091}
   - component: {fileID: 2009856090}
-  - component: {fileID: 2009856089}
   - component: {fileID: 2009856088}
   m_Layer: 5
   m_Name: Player
@@ -5525,19 +5514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd828f8aa8cda48459737b38825a69a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2009856089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2009856083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57a3828eb8c249078866f28b3c65929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 180076004}
-  armor: {fileID: 845268609}
 --- !u!114 &2009856090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5549,8 +5525,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621284e90829043be8422154e97d07bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  currentHealth: 0
   armor: 0
+  animator: {fileID: 2009856091}
+  maxHealth: 10
+  healthText: {fileID: 180076004}
+  armorText: {fileID: 845268609}
 --- !u!95 &2009856091
 Animator:
   serializedVersion: 3

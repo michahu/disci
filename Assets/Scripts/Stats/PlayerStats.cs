@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : CharacterStats {
-
+    
     public static PlayerStats playerStatsInstance;
 
     void Awake()
@@ -18,6 +18,8 @@ public class PlayerStats : CharacterStats {
             playerStatsInstance = this;
         }
     }
+
+    public Animator animator;
 
     string EndGame = "You lost!";
 
