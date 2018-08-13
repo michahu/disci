@@ -21,7 +21,7 @@ public class Hand : MonoBehaviour {
         for (int i = 0; i < d.cardsInDeck.Count && i < HAND_SIZE; i++)
         {
             Add(d.Draw());
-            Debug.Log("Occurred " + i);
+            // Debug.Log("Occurred " + i);
         }
     }
 

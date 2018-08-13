@@ -11,8 +11,8 @@ public class ArmorComponent : CardComponent {
         this.ArmorValue = value;
     }
 
-    public virtual void Action()
+    public override void Action()
     {
-        Debug.Log("Armored up for " + ArmorValue + " .");
+        PlayerStats.playerStatsInstance.Armor(ArmorValue);
     }
 }

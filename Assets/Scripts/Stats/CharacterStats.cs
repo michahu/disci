@@ -2,22 +2,13 @@
 
 public class CharacterStats : MonoBehaviour {
 
-    public int maxHealth = 10;
-    public int currentHealth { get; private set; }
+    public int currentHealth; 
 
     public int armor;
 
     // alerting health ui of damage taken
     public event System.Action<int> OnHealthChanged;
     public event System.Action<int> OnArmorChanged;
-
-    void Awake()
-    {
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        currentHealth = maxHealth;
-
-        armor = 0;
-    } 
 
     public void Damage (int damage)
     {
@@ -62,9 +53,6 @@ public class CharacterStats : MonoBehaviour {
 
     public virtual void Die ()
     {
-
-        // Die in some way
-        // This method is meant to be overwritten
         Debug.Log(transform.name + " died.");
     }
 }

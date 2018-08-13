@@ -11,8 +11,8 @@ public class HealComponent : CardComponent {
         this.HealValue = value;
     }
 
-    public virtual void Heal()
+    public override void Action()
     {
-        Debug.Log("Armored up for " + HealValue + " .");
+        PlayerStats.playerStatsInstance.Heal(HealValue);
     }
 }

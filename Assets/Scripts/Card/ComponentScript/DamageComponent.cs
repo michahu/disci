@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// [System.Serializable]
-// [CreateAssetMenu(fileName = "Damage Component", menuName = "Components/Damage")]
 public class DamageComponent : CardComponent {
 
     private int DamageValue;
@@ -15,6 +13,6 @@ public class DamageComponent : CardComponent {
 
     public override void Action()
     {
-        Debug.Log("Dealt " + DamageValue + " damage.");
+        EnemyStats.enemyStatsInstance.Damage(DamageValue);
     }
 }
