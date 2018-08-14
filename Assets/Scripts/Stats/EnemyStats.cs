@@ -21,6 +21,8 @@ public class EnemyStats : CharacterStats {
 
     string EndGame = "You won!";
 
+    public Animator animator;
+
     public int maxHealth = 10;
 
     public Text healthText;
@@ -44,7 +46,7 @@ public class EnemyStats : CharacterStats {
     {
         base.Die();
 
-        // Add death animation??
+        EnemyStats.enemyStatsInstance.animator.SetTrigger("Die");
 
         GameManager.instance.EndRound(EndGame);
     }

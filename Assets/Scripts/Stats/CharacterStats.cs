@@ -18,10 +18,12 @@ public class CharacterStats : MonoBehaviour {
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
-        if (OnHealthChanged != null)
+        if (OnHealthChanged != null && currentHealth >= 0)
         {
             OnHealthChanged(currentHealth);
         }
+
+        else OnHealthChanged(0);
 
         if (currentHealth <= 0)
         {

@@ -15,5 +15,6 @@ public class DamageComponent : CardComponent {
     {
         PlayerStats.playerStatsInstance.animator.SetTrigger("Attack");
         EnemyStats.enemyStatsInstance.Damage(DamageValue);
+        EnemyStats.enemyStatsInstance.animator.SetTrigger("On Hit");
     }
 }
