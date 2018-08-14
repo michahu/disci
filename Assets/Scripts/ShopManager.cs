@@ -73,7 +73,7 @@ public class ShopManager : MonoBehaviour {
     public GameObject CreateCard(Card c)
     {
         GameObject newCard = Instantiate(CardPrefab);
-        newCard.transform.SetParent(this.transform);
+        newCard.transform.SetParent(this.transform, false);
 
         newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
         newCard.transform.GetChild(2).GetComponent<Text>().text = c.name;
@@ -90,7 +90,7 @@ public class ShopManager : MonoBehaviour {
     public GameObject CopyCard(GameObject card)
     {
         GameObject newCard = Instantiate(CardPrefab);
-        newCard.transform.SetParent(this.transform);
+        newCard.transform.SetParent(this.transform, false);
 
         newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite
             = card.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite;
