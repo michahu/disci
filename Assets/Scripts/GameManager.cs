@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour {
             GetQuestion();
             PlayerStats.playerStatsInstance.ResetMana();
         }
+
     }
 
     private int mod(int x, int m)
@@ -189,6 +190,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void EndTurn ()
+    {
+        StartCoroutine(EndTurnAnimation());
+    }
+
     public void EndRound (string EndGame) 
     {
         RoundOverPanel.SetActive(true);
@@ -198,6 +204,17 @@ public class GameManager : MonoBehaviour {
     public void ReturnToEnvironment() 
     {
         SceneManager.LoadScene("Environment Scene");
+    }
+
+    IEnumerator EndTurnAnimation () 
+    {
+        EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
+        PlayerStats.playerStatsInstance.Damage(2);
+        yield return new WaitForSeconds(1.5f);
+        PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
+        yield return new WaitForSeconds(1f);
+
+        Advance();
     }
 }
 
