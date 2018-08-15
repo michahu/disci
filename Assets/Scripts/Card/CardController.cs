@@ -72,9 +72,10 @@ public class CardController : MonoBehaviour {
 
     private void SaveGameData()
     {
-        string dataAsJson = JsonUtility.ToJson(allCards[0].cards);
+        string dataAsJson = JsonUtility.ToJson(allCards[0]);
 
         string filePath = Application.dataPath + "/StreamingAssets/card.json";
+        Debug.Log("file path: " + filePath);
         File.WriteAllText(filePath, dataAsJson);
     }
 }
