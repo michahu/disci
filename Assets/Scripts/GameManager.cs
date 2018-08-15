@@ -209,9 +209,9 @@ public class GameManager : MonoBehaviour {
     IEnumerator EndTurnAnimation () 
     {
         EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
-        PlayerStats.playerStatsInstance.Damage(2);
         yield return new WaitForSeconds(1.5f);
         PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
+        PlayerStats.playerStatsInstance.Damage(2);
         yield return new WaitForSeconds(1f);
 
         Advance();

@@ -50,6 +50,7 @@ public class PlayerStats : CharacterStats {
     {
         base.Die();
 
+        animator.SetTrigger("Die");
         GameManager.instance.EndRound(EndGame);
     }
 

@@ -13,6 +13,9 @@ public class ShopManager : MonoBehaviour {
     public Deck deck;
     public GameObject CardPrefab;
 
+    private bool displayActive;
+    private float displayTime;
+
     public void Start()
     {
         OnShop();
@@ -55,14 +58,37 @@ public class ShopManager : MonoBehaviour {
         if (Money.money <= 0)
         {
             OutOfMoney.SetActive(true);
+            displayTime = 1f;
             return false;
         }
         if (Money.money < cost)
         {
             CannotAfford.SetActive(true);
+            displayTime = 1f;
             return false;
         }
         else return true;
+    }
+
+    void Update ()
+    {
+        if (OutOfMoney.activeSelf)
+        {
+            displayTime -= Time.deltaTime;
+            if (displayTime <= 0)
+            {
+                OutOfMoney.SetActive(false);
+            }
+        }
+
+        if (CannotAfford.activeSelf)
+        {
+            displayTime -= Time.deltaTime;
+            if (displayTime <= 0)
+            {
+                CannotAfford.SetActive(false);
+            }
+        }
     }
 
     public void UpdateMoney()
