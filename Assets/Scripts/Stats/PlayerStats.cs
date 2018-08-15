@@ -24,7 +24,7 @@ public class PlayerStats : CharacterStats {
     string EndGame = "You lost!";
 
     public int maxHealth = 10;
-    public int mana = 5;
+    public int mana = 3;
 
     public Text healthText;
     public Text armorText;
@@ -73,7 +73,7 @@ public class PlayerStats : CharacterStats {
     // shitty fix
     public void ResetMana()
     {
-        mana = 5;
+        mana = 3;
         manaText.text = mana.ToString();
     }
 }

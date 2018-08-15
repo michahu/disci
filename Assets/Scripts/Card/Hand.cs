@@ -37,13 +37,18 @@ public class Hand : MonoBehaviour {
     // I need to think about
     public void OnCombatEnd()
     {
+        //foreach (transform t in this.transform)
+        //{
+        //    t.transform.setparent(d.transform);
+        //}
+
+        foreach (GameObject card in cardsInHand)
+        {
+            card.transform.SetParent(d.transform);
+        }
+
         d.cardsInDeck.AddRange(cardsInHand);
         cardsInHand.Clear();
         d.ShuffleDeck();
-
-        foreach (Transform t in this.transform)
-        {
-            t.transform.SetParent(Deck.deckInstance.transform);
-        }
     }
 }
