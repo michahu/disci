@@ -17,8 +17,9 @@ public class Hand : MonoBehaviour {
     public void OnCombatBegin()
     {
         d.ShuffleDeck();
-
-        for (int i = 0; i < d.cardsInDeck.Count && i < HAND_SIZE; i++)
+        // necessary because my draw method decrements cards
+        int cardsInDeck = d.cardsInDeck.Count;
+        for (int i = 0; i < cardsInDeck && i < HAND_SIZE; i++)
         {
             Add(d.Draw());
             // Debug.Log("Occurred " + i);
