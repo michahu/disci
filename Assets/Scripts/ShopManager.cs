@@ -23,7 +23,7 @@ public class ShopManager : MonoBehaviour {
 
         // there is potentially better way
         Card[] cards = GameManager.instance.GetComponent<CardController>()
-            .GetCardGroup(0).GetCards();
+            .GetCardGroup(0).cards;
 
         for (int i = 0; i < cards.Length; i++)
         {

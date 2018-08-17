@@ -7,9 +7,15 @@ using System.IO;
 public class CardController : MonoBehaviour {
 
     public CardGroup[] allCards;
+    private string gameDataFileName = "card.json";
 
 	// Use this for initialization
 	void Start () {
+
+        // will be edited in future
+        allCards = new CardGroup[1];
+        allCards[0] = LoadGameData();
+
         foreach (Card c in allCards[0].cards)
         {
             List<CardComponent> temp = new List<CardComponent>();
@@ -19,8 +25,7 @@ public class CardController : MonoBehaviour {
             }
             c.cardComponents = temp;
         }
-
-        SaveGameData();
+        // SaveGameData();
 	}
 
     public CardGroup GetCardGroup(int i)
@@ -78,4 +83,22 @@ public class CardController : MonoBehaviour {
         Debug.Log("file path: " + filePath);
         File.WriteAllText(filePath, dataAsJson);
     }
+
+    // from: https://unity3d.com/learn/tutorials/topics/scripting/loading-game-data-json?playlist=17117
+    private CardGroup LoadGameData()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
+
+        if (File.Exists(filePath))
+        {
+            string dataAsJson = File.ReadAllText(filePath);
+            CardGroup loadedData = JsonUtility.FromJson<CardGroup>(dataAsJson);
+            return loadedData;
+        }
+        else
+        {
+            Debug.LogError("Cannot load card data");
+            return null;
+        }
+    }   
 }

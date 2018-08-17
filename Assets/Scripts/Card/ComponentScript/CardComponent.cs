@@ -9,6 +9,7 @@ public class CardComponent
     public virtual void Action() { }
 }
 
+[System.Serializable]
 public enum ComponentType
 {
    Attack, Armor, Heal, Buff, Debuff
