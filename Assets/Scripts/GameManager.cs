@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour {
 
@@ -24,7 +25,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public Question[] questions;
+    private Question[] questions;
+    private string gameDataFileName = "questions.json";
 
     // canvas groups control the gameflow
     public CanvasGroup qa;
@@ -66,11 +68,13 @@ public class GameManager : MonoBehaviour {
     {
         canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
         gameState = 0;
+        questions = LoadGameData();
 
         if (unanswered == null || unanswered.Count == 0)
         {
             unanswered = questions.ToList<Question>();
         }
+        // SaveGameData();
         GetQuestion();
     }
 
@@ -215,6 +219,32 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         Advance();
+    }
+
+    private void SaveGameData()
+    {
+        string dataAsJson = JsonHelper.arrayToJson<Question>(questions);
+
+        string filePath = Application.dataPath + "/StreamingAssets/questions.json";
+        // Debug.Log("file path: " + filePath);
+        File.WriteAllText(filePath, dataAsJson);
+    }
+
+    private Question[] LoadGameData()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
+
+        if (File.Exists(filePath))
+        {
+            Debug.Log("File exists");
+            string dataAsJson = File.ReadAllText(filePath);
+            return JsonHelper.getJsonArray<Question>(dataAsJson);
+        }
+        else
+        {
+            Debug.LogError("Cannot load question data");
+            return null;
+        }
     }
 }
 

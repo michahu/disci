@@ -1,0 +1,104 @@
+{
+    "array": [
+        {
+            "q": "Which subatomic particle has a -1 charge?",
+            "ans": 2,
+            "answers": [
+                "proton",
+                "neutron",
+                "electron",
+                "positron"
+            ]
+        },
+        {
+            "q": "What are the rows of the periodic table called?",
+            "ans": 3,
+            "answers": [
+                "Groups",
+                "Families",
+                "Elements",
+                "Periods"
+            ]
+        },
+        {
+            "q": "What family is the element Sodium part of?",
+            "ans": 0,
+            "answers": [
+                "Alkali Metals",
+                "Transition Metals",
+                "Halogens",
+                "Noble Gases"
+            ]
+        },
+        {
+            "q": "What do we call the number associated with each element on the periodic table?",
+            "ans": 2,
+            "answers": [
+                "Atomic Mass",
+                "Atomic Weight",
+                "Atomic Number",
+                "Atomic Identity"
+            ]
+        },
+        {
+            "q": "Which two atom particles have 1 amu mass?",
+            "ans": 1,
+            "answers": [
+                "Protons and Electrons",
+                "Protons and Neutrons",
+                "Neutrons and Electrons",
+                "Atoms and Neutrons"
+            ]
+        },
+        {
+            "q": "Which state of matter is a substance with a definite shape and volume?",
+            "ans": 0,
+            "answers": [
+                "Solid",
+                "Liquid",
+                "Gas",
+                "Vapor"
+            ]
+        },
+        {
+            "q": "Which of these elements is a halogen?",
+            "ans": 1,
+            "answers": [
+                "Hydrogen",
+                "Fluorine",
+                "Silicon",
+                "Helium"
+            ]
+        },
+        {
+            "q": "What do you call the change of state from solid to gas?",
+            "ans": 3,
+            "answers": [
+                "Evaporation",
+                "Melting",
+                "Freezing",
+                "Sublimation"
+            ]
+        },
+        {
+            "q": "What is the key difference between vaporization and evaporation?",
+            "ans": 2,
+            "answers": [
+                "They are the same thing",
+                "One is about elements; the other about compounts",
+                "Changes of state below vs. above the boiling point",
+                "One involves electrons; the other does not"
+            ]
+        },
+        {
+            "q": "Which change of state is NOT exothermic?",
+            "ans": 1,
+            "answers": [
+                "Freezing",
+                "Melting",
+                "Deposition",
+                "Condensation"
+            ]
+        }
+    ]
+}
