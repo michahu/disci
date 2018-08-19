@@ -6,7 +6,7 @@ using System.IO;
 
 public class CardController : MonoBehaviour {
 
-    public CardGroup[] allCards;
+    private CardGroup[] allCards;
     private string gameDataFileName = "card.json";
 
 	// Use this for initialization
