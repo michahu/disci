@@ -11,7 +11,8 @@ public class PlayVideo : MonoBehaviour
     public MovieTexture movie;
     private AudioSource audio;
 
-    void Start() {
+    void Start()
+    {
 
         GetComponent<RawImage>().texture = movie as MovieTexture;
         audio = GetComponent<AudioSource>();
@@ -20,21 +21,3 @@ public class PlayVideo : MonoBehaviour
         audio.Play();
 
     }
-
-    public void PlayPause() {
-
-
-        if (movie.isPlaying) {
-
-            movie.Pause();
-        }
-
-        else if (!movie.isPlaying) {
-
-            movie.Play();
-        }
-    }
-	
-}
-
-

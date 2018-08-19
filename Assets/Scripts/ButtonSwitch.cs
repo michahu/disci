@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSwitch : MonoBehaviour {
 
-   public void SceneLoader(int SceneIndex){
+    [SerializeField] private string loadLevel;
 
-        SceneManager.LoadScene(SceneIndex);
+	public void changescene(string loadLevel)
+
+    {
+
+        SceneManager.LoadScene(loadLevel);
     }
 
 }
+
+
+

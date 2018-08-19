@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewVideoScene.unity
     guid: b3df3f67e5313413e9530597e79105dd
-  - enabled: 0
-    path: Assets/Scenes/VideoScene.unity
-    guid: 4efe0fa0eb32746789dd229b2f6c81a6
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/OldVid.unity
+    guid: 4efe0fa0eb32746789dd229b2f6c81a6
   m_configObjects: {}
