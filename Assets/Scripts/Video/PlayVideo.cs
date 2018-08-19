@@ -34,7 +34,16 @@ public class PlayVideo : MonoBehaviour
             movie.Play();
         }
     }
-	
-}
+
+    public void Replay() {
+
+
+    }
+
+        }
+    
+
+
+
 
 
