@@ -30,10 +30,11 @@ public class QuestionManager : MonoBehaviour {
 
     // question tracking
     private static List<Question> unanswered;
-    private static List<Question> correct;
-    private static List<Question> incorrect;
+    // private static List<Question> correct;
+    // private static List<Question> incorrect;
     private Question currentQuestion;
-    private int questionCount = 0;
+    // private int questionCount = 0;
+    private QuestionTracker questionTracker;
 
     // attach on screen text to question
     public Text questionText;
@@ -51,9 +52,10 @@ public class QuestionManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         questions = LoadGameData();
-        correct = new List<Question>();
-        incorrect = new List<Question>();
-        questionCount = 0;
+        // correct = new List<Question>();
+        // incorrect = new List<Question>();
+        // questionCount = 0;
+        questionTracker = new QuestionTracker();
 
         if (unanswered == null || unanswered.Count == 0)
         {
@@ -79,11 +81,12 @@ public class QuestionManager : MonoBehaviour {
 
     public string GetStats()
     {
-        string ret = "";
-        return "Accuracy: " 
-            + (correct.Count() / questionCount * 100).ToString()
-            + "%";
-        return ret;
+        //string ret = "";
+        //ret += "Accuracy: " 
+        //    + (correct.Count() / questionCount * 100).ToString()
+        //    + "%";
+        //return ret;
+        return questionTracker.GetStats();
     }
 
     public void GetQuestion()
@@ -155,18 +158,19 @@ public class QuestionManager : MonoBehaviour {
 
     private void Incorrect()
     {
-        incorrect.Add(currentQuestion);
+        questionTracker.Incorrect(currentQuestion);
         isQuestionActive = false;
         feedbackText.text = "The correct answer was \"" + currentQuestion.answers[(int)currentQuestion.ans] + "\"";
-        questionCount++;
+        // questionCount++;
     }
     public void Correct()
     {
-        correct.Add(currentQuestion);
+        // correct.Add(currentQuestion);
+        questionTracker.Correct(currentQuestion);
         isQuestionActive = false;
         Money.AddMoney(1);
         feedbackText.text = "Correct!";
-        questionCount++;
+        // questionCount++;
     }
 
     private Question[] LoadGameData()
