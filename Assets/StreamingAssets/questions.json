@@ -2,6 +2,7 @@
     "array": [
         {
             "q": "Which subatomic particle has a -1 charge?",
+            "tags": "Atomic structure",
             "ans": 2,
             "answers": [
                 "proton",
@@ -12,6 +13,7 @@
         },
         {
             "q": "What are the rows of the periodic table called?",
+            "tags": "",
             "ans": 3,
             "answers": [
                 "Groups",
@@ -22,6 +24,7 @@
         },
         {
             "q": "What family is the element Sodium part of?",
+            "tags": "",
             "ans": 0,
             "answers": [
                 "Alkali Metals",
@@ -32,6 +35,7 @@
         },
         {
             "q": "What do we call the number associated with each element on the periodic table?",
+            "tags": "",
             "ans": 2,
             "answers": [
                 "Atomic Mass",
@@ -42,6 +46,7 @@
         },
         {
             "q": "Which two atom particles have 1 amu mass?",
+            "tags": "",
             "ans": 1,
             "answers": [
                 "Protons and Electrons",
@@ -52,6 +57,7 @@
         },
         {
             "q": "Which state of matter is a substance with a definite shape and volume?",
+            "tags": "",
             "ans": 0,
             "answers": [
                 "Solid",
@@ -62,6 +68,7 @@
         },
         {
             "q": "Which of these elements is a halogen?",
+            "tags": "",
             "ans": 1,
             "answers": [
                 "Hydrogen",
@@ -72,6 +79,7 @@
         },
         {
             "q": "What do you call the change of state from solid to gas?",
+            "tags": "",
             "ans": 3,
             "answers": [
                 "Evaporation",
@@ -82,6 +90,7 @@
         },
         {
             "q": "What is the key difference between vaporization and evaporation?",
+            "tags": "",
             "ans": 2,
             "answers": [
                 "They are the same thing",
@@ -92,6 +101,7 @@
         },
         {
             "q": "Which change of state is NOT exothermic?",
+            "tags": "",
             "ans": 1,
             "answers": [
                 "Freezing",

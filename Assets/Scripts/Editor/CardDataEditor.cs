@@ -17,6 +17,8 @@ public class CardDataEditor : EditorWindow  {
 
     private void OnGUI()
     {
+        // EditorGUILayout.BeginVertical();
+
         if (cardGroup != null)
         {
             Debug.Log("Got here");

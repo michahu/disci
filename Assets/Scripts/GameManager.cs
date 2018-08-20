@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
 
     public void EndRound (string EndGame) 
     {
+        EndGame = EndGame + "\n" + QuestionManager.questionManagerInstance.GetStats();
         RoundOverPanel.SetActive(true);
         RoundOverPanel.GetComponentInChildren<Text>().text = EndGame;
     }

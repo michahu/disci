@@ -30,7 +30,10 @@ public class QuestionManager : MonoBehaviour {
 
     // question tracking
     private static List<Question> unanswered;
+    private static List<Question> correct;
+    private static List<Question> incorrect;
     private Question currentQuestion;
+    private int questionCount = 0;
 
     // attach on screen text to question
     public Text questionText;
@@ -48,6 +51,9 @@ public class QuestionManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         questions = LoadGameData();
+        correct = new List<Question>();
+        incorrect = new List<Question>();
+        questionCount = 0;
 
         if (unanswered == null || unanswered.Count == 0)
         {
@@ -69,6 +75,15 @@ public class QuestionManager : MonoBehaviour {
                 GameManager.instance.Advance();
             }
         }
+    }
+
+    public string GetStats()
+    {
+        string ret = "";
+        return "Accuracy: " 
+            + (correct.Count() / questionCount * 100).ToString()
+            + "%";
+        return ret;
     }
 
     public void GetQuestion()
@@ -140,15 +155,18 @@ public class QuestionManager : MonoBehaviour {
 
     private void Incorrect()
     {
+        incorrect.Add(currentQuestion);
         isQuestionActive = false;
-        int correct = (int)currentQuestion.ans;
-        feedbackText.text = "The correct answer was \"" + currentQuestion.answers[correct] + "\"";
+        feedbackText.text = "The correct answer was \"" + currentQuestion.answers[(int)currentQuestion.ans] + "\"";
+        questionCount++;
     }
     public void Correct()
     {
+        correct.Add(currentQuestion);
         isQuestionActive = false;
         Money.AddMoney(1);
         feedbackText.text = "Correct!";
+        questionCount++;
     }
 
     private Question[] LoadGameData()
