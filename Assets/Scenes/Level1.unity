@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10973,7 +10973,7 @@ MonoBehaviour:
   armor: 0
   animator: {fileID: 991657693}
   maxHealth: 10
-  mana: 5
+  mana: 3
   healthText: {fileID: 180076004}
   armorText: {fileID: 845268609}
   manaText: {fileID: 998550321}
