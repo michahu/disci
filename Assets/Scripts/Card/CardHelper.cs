@@ -16,5 +16,13 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
         // bandaid fix?
         if (this.transform.parent.name == "Shop Panel")
         this.gameObject.GetComponentInParent<ShopManager>().Buy(this.gameObject);
+
+    }
+
+    void Update ()
+    {
+        // will have to set up ShopManager parent potentially
+        if (Input.GetMouseButtonDown(1) && this.transform.parent.name == "Deck")
+            this.GetComponentInParent<ShopManager>().Sell(this.gameObject);
     }
 }

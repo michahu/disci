@@ -53,6 +53,15 @@ public class ShopManager : MonoBehaviour {
         else return;
     }
 
+    public void Sell (GameObject card)
+    {
+        CardHelper c = card.GetComponent<CardHelper>();
+
+        deck.Remove(CopyCard(card));
+        Money.AddMoney(c.card.goldCost);
+        UpdateMoney();
+    }
+
     public bool IsThereMoney(int cost)
     {
         if (Money.money <= 0)

@@ -27,6 +27,11 @@ public class Deck : MonoBehaviour {
         card.transform.SetParent(this.transform);
     }
 
+    public void Remove(GameObject card)
+    {
+        cardsInDeck.Remove(card);
+    }
+
     public GameObject Draw()
     {
         int i = cardsInDeck.Count - 1;
