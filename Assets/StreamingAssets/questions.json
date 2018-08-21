@@ -1,63 +1,63 @@
 {
     "array": [
         {
-            "q": "Which subatomic particle has a -1 charge?",
-            "tags": "sample, tag",
+            "q": "Matter does NOT exist in which of these states?",
+            "tags": "States",
             "ans": 2,
             "answers": [
-                "proton",
-                "neutron",
-                "electron",
-                "positron"
+                "Solid",
+                "Liquid",
+                "Mixture",
+                "Gas"
             ]
         },
         {
-            "q": "What are the rows of the periodic table called?",
-            "tags": "sample, tag",
-            "ans": 3,
-            "answers": [
-                "Groups",
-                "Families",
-                "Elements",
-                "Periods"
-            ]
-        },
-        {
-            "q": "What family is the element Sodium part of?",
-            "tags": "sample, tag",
-            "ans": 0,
-            "answers": [
-                "Alkali Metals",
-                "Transition Metals",
-                "Halogens",
-                "Noble Gases"
-            ]
-        },
-        {
-            "q": "What do we call the number associated with each element on the periodic table?",
-            "tags": "sample, tag",
-            "ans": 2,
-            "answers": [
-                "Atomic Mass",
-                "Atomic Weight",
-                "Atomic Number",
-                "Atomic Identity"
-            ]
-        },
-        {
-            "q": "Which two atom particles have 1 amu mass?",
-            "tags": "sample, tag",
+            "q": "Which state of matter has a definite volume but no fixed shape?",
+            "tags": "States",
             "ans": 1,
             "answers": [
-                "Protons and Electrons",
-                "Protons and Neutrons",
-                "Neutrons and Electrons",
-                "Atoms and Neutrons"
+                "Gas",
+                "Liquid",
+                "Solid",
+                "Container"
+            ]
+        },
+        {
+            "q": "What qualities does the gaseous state have?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "No Volume or Shape",
+                "Has Volume, No Shape",
+                "No Volume, Has Shape",
+                "Has Volume and Shape"
+            ]
+        },
+        {
+            "q": "What is another name for melting, a change from solid to liquid?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "Dripping",
+                "Disintegration",
+                "Fusion",
+                "Fission"
+            ]
+        },
+        {
+            "q": "What is the inverse process of sublimation?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Evaporation",
+                "Deposition",
+                "Condensation",
+                "Fusion"
             ]
         },
         {
             "q": "Which state of matter is a substance with a definite shape and volume?",
-            "tags": "sample, tag",
+            "tags": "States",
             "ans": 0,
             "answers": [
                 "Solid",
@@ -67,19 +67,19 @@
             ]
         },
         {
-            "q": "Which of these elements is a halogen?",
-            "tags": "sample, tag",
+            "q": "Why are state changes considered physical changes?",
+            "tags": "State Changes",
             "ans": 1,
             "answers": [
-                "Hydrogen",
-                "Fluorine",
-                "Silicon",
-                "Helium"
+                "You can see them",
+                "They retain the original chemical composition",
+                "They interact with each molecule physically",
+                "They are not physical; they are chemical"
             ]
         },
         {
             "q": "What do you call the change of state from solid to gas?",
-            "tags": "sample, tag",
+            "tags": "State Changes",
             "ans": 3,
             "answers": [
                 "Evaporation",
@@ -90,7 +90,7 @@
         },
         {
             "q": "What is the key difference between vaporization and evaporation?",
-            "tags": "sample, tag",
+            "tags": "State Changes",
             "ans": 2,
             "answers": [
                 "They are the same thing",
@@ -101,7 +101,7 @@
         },
         {
             "q": "Which change of state is NOT exothermic?",
-            "tags": "sample, tag",
+            "tags": "A",
             "ans": 1,
             "answers": [
                 "Freezing",
