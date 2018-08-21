@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class CharacterStats : MonoBehaviour {
 
@@ -12,11 +13,15 @@ public class CharacterStats : MonoBehaviour {
 
     public void Damage (int damage)
     {
-        damage -= armor;
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);
+        // reduce damage
+        int unblockedDamage = damage - armor;
+        unblockedDamage = Mathf.Clamp(unblockedDamage, 0, int.MaxValue);
 
-        currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + " damage.");
+        // reduce armor
+        Armor(-damage);
+
+        currentHealth -= unblockedDamage;
+        Debug.Log(transform.name + " takes " + unblockedDamage + " damage.");
 
         if (OnHealthChanged != null && currentHealth >= 0)
         {
@@ -33,6 +38,7 @@ public class CharacterStats : MonoBehaviour {
 
     public void Armor (int ArmorValue) 
     {
+        ArmorValue = Math.Max(-armor, ArmorValue);
         armor += ArmorValue;
         Debug.Log(transform.name + " gained " + armor + " armor.");
 
