@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
     private int gameState;
 
     // end round and timers
+    public GameObject EndTurnButton;
     public GameObject RoundOverPanel;
 
     /*
@@ -61,6 +62,9 @@ public class GameManager : MonoBehaviour {
         {
             QuestionManager.questionManagerInstance.GetQuestion();
             PlayerStats.playerStatsInstance.ResetMana();
+        } else if (gameState == 3)
+        {
+            EndTurnButton.SetActive(true);
         }
 
     }
@@ -72,6 +76,7 @@ public class GameManager : MonoBehaviour {
 
     public void EndTurn ()
     {
+        EndTurnButton.SetActive(false);
         StartCoroutine(EndTurnAnimation());
     }
 
