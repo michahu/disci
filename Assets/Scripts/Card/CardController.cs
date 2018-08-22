@@ -47,29 +47,29 @@ public class CardController : MonoBehaviour {
             case ComponentType.Armor:
             {
                     cardComponents.Add(new ArmorComponent(modifier));
-                    Debug.Log("Added ArmorComponent.");
+                    // Debug.Log("Added ArmorComponent.");
                     break;
             }
             case ComponentType.Attack:
             {
                     cardComponents.Add(new DamageComponent(modifier));
-                    Debug.Log("Added DamageComponent.");
+                    // Debug.Log("Added DamageComponent.");
                     break;
             }
             case ComponentType.Buff:
             {
-                    Debug.Log("Not implemented");
+                    // Debug.Log("Not implemented");
                     break;
             }
             case ComponentType.Debuff:
             {
-                    Debug.Log("Not implemented");
+                    // Debug.Log("Not implemented");
                     break;
             }
             case ComponentType.Heal:
             {
                     cardComponents.Add(new HealComponent(modifier));
-                    Debug.Log("Added Heal Component");
+                    // Debug.Log("Added Heal Component");
                     break;
             }
         }
@@ -80,7 +80,7 @@ public class CardController : MonoBehaviour {
         string dataAsJson = JsonUtility.ToJson(allCards[0]);
 
         string filePath = Application.dataPath + "/StreamingAssets/card.json";
-        Debug.Log("file path: " + filePath);
+        // Debug.Log("file path: " + filePath);
         File.WriteAllText(filePath, dataAsJson);
     }
 

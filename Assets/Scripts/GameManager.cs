@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
     public void Advance()
     {
         gameState = mod(gameState + 1, 4);
-        Debug.Log("GAMESTATE: " + gameState);
+        // Debug.Log("GAMESTATE: " + gameState);
         Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
         if (gameState == 0)
         {
@@ -77,7 +77,8 @@ public class GameManager : MonoBehaviour {
     public void EndTurn ()
     {
         EndTurnButton.SetActive(false);
-        StartCoroutine(EndTurnAnimation());
+        EnemyStats.enemyStatsInstance.DoSomething();
+        Advance();
     }
 
     public void EndRound (string EndGame) 
@@ -92,16 +93,6 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("Environment Scene");
     }
 
-    IEnumerator EndTurnAnimation () 
-    {
-        EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(1.5f);
-        PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
-        PlayerStats.playerStatsInstance.Damage(2);
-        yield return new WaitForSeconds(1f);
-
-        Advance();
-    }
 }
 
 

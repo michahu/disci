@@ -6,6 +6,7 @@ public class CharacterStats : MonoBehaviour {
     public int currentHealth; 
 
     public int armor;
+    public int baseAttack;
 
     // alerting health and armor changes
     public event System.Action<int> OnHealthChanged;
@@ -21,7 +22,7 @@ public class CharacterStats : MonoBehaviour {
         Armor(-damage);
 
         currentHealth -= unblockedDamage;
-        Debug.Log(transform.name + " takes " + unblockedDamage + " damage.");
+        // Debug.Log(transform.name + " takes " + unblockedDamage + " damage.");
 
         if (OnHealthChanged != null && currentHealth >= 0)
         {
@@ -40,7 +41,7 @@ public class CharacterStats : MonoBehaviour {
     {
         ArmorValue = Math.Max(-armor, ArmorValue);
         armor += ArmorValue;
-        Debug.Log(transform.name + " gained " + armor + " armor.");
+        // Debug.Log(transform.name + " gained " + armor + " armor.");
 
         if (OnArmorChanged != null)
         {
@@ -51,7 +52,7 @@ public class CharacterStats : MonoBehaviour {
     public void Heal (int HealValue) 
     {
         currentHealth += HealValue;
-        Debug.Log(transform.name + " gained" + HealValue + " health.");
+        // Debug.Log(transform.name + " gained" + HealValue + " health.");
 
         if (OnHealthChanged != null)
         {

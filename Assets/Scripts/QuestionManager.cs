@@ -179,7 +179,7 @@ public class QuestionManager : MonoBehaviour {
 
         if (File.Exists(filePath))
         {
-            Debug.Log("File exists");
+            // Debug.Log("File exists");
             string dataAsJson = File.ReadAllText(filePath);
             return JsonHelper.getJsonArray<Question>(dataAsJson);
         }

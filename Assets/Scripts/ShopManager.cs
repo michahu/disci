@@ -45,7 +45,7 @@ public class ShopManager : MonoBehaviour {
 
         if (IsThereMoney(c.card.goldCost))
         {
-            Debug.Log("Buying card " + c.name);
+            // Debug.Log("Buying card " + c.name);
             deck.Add(CopyCard(card));
             Money.SubtractMoney(c.card.goldCost);
             UpdateMoney();

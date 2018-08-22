@@ -40,8 +40,8 @@ public class QuestionTracker {
         }
         questionsCorrect++;
         questionsTotal++;
-        Debug.Log("QUESTIONS CORRECT: " + questionsCorrect);
-        Debug.Log("QUESTIONS TOTAL: " + questionsTotal);
+        // Debug.Log("QUESTIONS CORRECT: " + questionsCorrect);
+        // Debug.Log("QUESTIONS TOTAL: " + questionsTotal);
     }
 
     public void Incorrect(Question question)
@@ -76,8 +76,13 @@ public class QuestionTracker {
     public string GetStats()
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append("Accuracy: " + (double) questionsCorrect / questionsTotal * 100 + "%\n");
-
+        sb.Append("Accuracy: " + (int) ((double) questionsCorrect / questionsTotal * 100) + "%\n");
+        //sb.Append("Categories: ");
+        //foreach(string s in tags)
+        //{
+        //    sb.Append(s + " ");
+        //}
+        //sb.Append("\n");
         foreach(string s in tags)
         {
             int numCorrect = 0;
@@ -91,7 +96,7 @@ public class QuestionTracker {
             {
                 numIncorrect += incorrect[s].Count;
             }
-            sb.Append(s + ": " + (double) numCorrect / (numCorrect + numIncorrect) * 100
+            sb.Append(s + ": " + (int) ((double) numCorrect / (numCorrect + numIncorrect) * 100)
                 + "%\n");
         }
 

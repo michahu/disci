@@ -16,7 +16,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         // Debug.Log("BEGIN DRAG");
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
-        Debug.Log("BLOCKING RAYCAST: " + GetComponent<CanvasGroup>().blocksRaycasts);
+        // Debug.Log("BLOCKING RAYCAST: " + GetComponent<CanvasGroup>().blocksRaycasts);
     }
 
     public void OnDrag(PointerEventData eventData)

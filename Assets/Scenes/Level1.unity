@@ -6292,10 +6292,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   armor: 0
+  baseAttack: 0
   animator: {fileID: 529638762}
-  maxHealth: 10
+  maxHealth: 20
   healthText: {fileID: 37449352}
   armorText: {fileID: 328191994}
+  enemyActions:
+    actions:
+    - explanation: 'Attack 2 '
+      action: 0
+      modifier: 2
+    - explanation: Buff Attack 2
+      action: 3
+      modifier: 2
 --- !u!1001 &532497545
 Prefab:
   m_ObjectHideFlags: 0
@@ -10911,6 +10920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   armor: 0
+  baseAttack: 0
   animator: {fileID: 991657693}
   maxHealth: 10
   mana: 3

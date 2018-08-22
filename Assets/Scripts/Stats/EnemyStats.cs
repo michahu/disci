@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class EnemyStats : CharacterStats {
 
@@ -23,13 +24,19 @@ public class EnemyStats : CharacterStats {
 
     public Animator animator;
 
-    public int maxHealth = 10;
+    public int maxHealth;
 
     public Text healthText;
     public Text armorText;
 
+    private string enemyActionsFileName = "enemy.json";
+    private EnemyActions enemyActions;
+
     private void Start()
     {
+        enemyActions = new EnemyActions(LoadEnemyActions());
+        // SaveGameData();
+
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         currentHealth = maxHealth;
 
@@ -40,6 +47,11 @@ public class EnemyStats : CharacterStats {
 
         GetComponent<CharacterStats>().OnHealthChanged += OnHealthTextChanged;
         GetComponent<CharacterStats>().OnArmorChanged += OnArmorTextChanged;
+    }
+
+    public void DoSomething()
+    {
+        this.enemyActions.PerformAction();
     }
 
     public override void Die()
@@ -59,5 +71,31 @@ public class EnemyStats : CharacterStats {
     void OnArmorTextChanged(int newArmor)
     {
         armorText.text = newArmor.ToString();
+    }
+
+    private EnemyActions LoadEnemyActions()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, enemyActionsFileName);
+
+        if (File.Exists(filePath))
+        {
+            // Debug.Log("File exists");
+            string dataAsJson = File.ReadAllText(filePath);
+            return JsonUtility.FromJson<EnemyActions>(dataAsJson);
+        }
+        else
+        {
+            Debug.LogError("Cannot load enemy data");
+            return null;
+        }
+    }
+
+    private void SaveGameData()
+    {
+        string dataAsJson = JsonUtility.ToJson(enemyActions);
+
+        string filePath = Application.dataPath + "/StreamingAssets/enemy.json";
+        Debug.Log("file path: " + filePath);
+        File.WriteAllText(filePath, dataAsJson);
     }
 }

@@ -7,7 +7,7 @@ public class DropZone : MonoBehaviour, IDropHandler {
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("DROP FIRE");
+        // Debug.Log("DROP FIRE");
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;

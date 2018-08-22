@@ -1,0 +1,14 @@
+{
+    "actions": [
+        {
+            "explanation": "Attack 2 ",
+            "action": 0,
+            "modifier": 2
+        },
+        {
+            "explanation": "Buff Attack 2",
+            "action": 3,
+            "modifier": 2
+        }
+    ]
+}
