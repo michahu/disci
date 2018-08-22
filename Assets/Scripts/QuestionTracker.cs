@@ -35,13 +35,20 @@ public class QuestionTracker {
                 temp.Add(question);
             } else
             {
-                correct.Add(s, new List<Question>());
+                temp = new List<Question>();
+                temp.Add(question);
+                correct.Add(s, temp);
             }
         }
         questionsCorrect++;
         questionsTotal++;
-        // Debug.Log("QUESTIONS CORRECT: " + questionsCorrect);
-        // Debug.Log("QUESTIONS TOTAL: " + questionsTotal);
+        //Debug.Log("QUESTIONS CORRECT: " + questionsCorrect);
+        //int qc = 0;
+        //foreach (KeyValuePair<string, List<Question>> set in correct)
+        //{
+        //    qc += set.Value.Count;
+        //}
+        //Debug.Log("Questions correct: " + qc);
     }
 
     public void Incorrect(Question question)
@@ -56,11 +63,20 @@ public class QuestionTracker {
             }
             else
             {
-                incorrect.Add(s, new List<Question>());
+                temp = new List<Question>();
+                temp.Add(question);
+                incorrect.Add(s, temp);
             }
         }
         questionsIncorrect++;
         questionsTotal++;
+        //Debug.Log("QUESTIONS INCORRECT: " + questionsIncorrect);
+        //int qc = 0;
+        //foreach (KeyValuePair<string, List<Question>> set in incorrect)
+        //{
+        //    qc += set.Value.Count;
+        //}
+        //Debug.Log("Questions incorrect: " + qc);
     }
 
     private string[] ReturnTags(Question question)
@@ -76,14 +92,15 @@ public class QuestionTracker {
     public string GetStats()
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append("Accuracy: " + (int) ((double) questionsCorrect / questionsTotal * 100) + "%\n");
+        sb.Append("Questions Answered: " + questionsTotal + "\n");
+        //sb.Append("Accuracy: " + (int) ((double) questionsCorrect / questionsTotal * 100) + "%\n");
         //sb.Append("Categories: ");
-        //foreach(string s in tags)
+        //foreach (string s in tags)
         //{
-        //    sb.Append(s + " ");
+        //    sb.Append(s + " ,");
         //}
         //sb.Append("\n");
-        foreach(string s in tags)
+        foreach (string s in tags)
         {
             int numCorrect = 0;
             int numIncorrect = 0;
@@ -96,7 +113,9 @@ public class QuestionTracker {
             {
                 numIncorrect += incorrect[s].Count;
             }
-            sb.Append(s + ": " + (int) ((double) numCorrect / (numCorrect + numIncorrect) * 100)
+            sb.Append(s + ": " 
+                + (numCorrect + numIncorrect) + " answered, "
+                + (int) ((double) numCorrect / (numCorrect + numIncorrect) * 100)
                 + "%\n");
         }
 
