@@ -15,7 +15,6 @@ public class EnemyActions {
         actions = enemyActions.actions;
         random = new System.Random();
         nextAction = GetAction();
-        mono = (new GameObject("anim")).AddComponent<MonoBehaviour>();
     }
 
     public void PerformAction()

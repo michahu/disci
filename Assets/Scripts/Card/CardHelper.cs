@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class CardHelper : MonoBehaviour, IPointerClickHandler{
 
     public Card card;
+    private int RoundBought;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -16,13 +17,23 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
         // bandaid fix?
         if (this.transform.parent.name == "Shop Panel")
         this.gameObject.GetComponentInParent<ShopManager>().Buy(this.gameObject);
+        RoundBought = GameManager.instance.RoundNumber;
 
     }
+
 
     void Update ()
     {
         // will have to set up ShopManager parent potentially
-        if (Input.GetMouseButtonDown(1) && this.transform.parent.name == "Deck")
-            this.GetComponentInParent<ShopManager>().Sell(this.gameObject);
+        if (Input.GetMouseButtonDown(1) && this.transform.parent.name == ("Deck"))
+        {
+            Deck.deckInstance.Remove(this.gameObject);
+            Destroy(this.gameObject);
+
+            if (GameManager.instance.RoundNumber == RoundBought)
+                Money.AddMoney(card.goldCost);
+            else Money.AddMoney((int) 0.5 * card.goldCost);
+
+        }
     }
 }

@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
     // end round and timers
     public GameObject EndTurnButton;
     public GameObject RoundOverPanel;
+    public int RoundNumber;
 
     /*
      * 0 = qa
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour {
     {
         canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
         gameState = 0;
+        RoundNumber = 0;
     }
 
     // don't like this
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour {
         {
             QuestionManager.questionManagerInstance.GetQuestion();
             PlayerStats.playerStatsInstance.ResetMana();
+            RoundNumber++;
         } else if (gameState == 3)
         {
             EndTurnButton.SetActive(true);
