@@ -8,12 +8,14 @@ public class EnemyActions {
     public List<Action> actions;
     private System.Random random;
     private Action nextAction;
+    private MonoBehaviour mono;
 
     // @TODO: maybe consider using the automatic constructor? how would that work?
     public EnemyActions(EnemyActions enemyActions) {
         actions = enemyActions.actions;
         random = new System.Random();
         nextAction = GetAction();
+        mono = (new GameObject("anim")).AddComponent<MonoBehaviour>();
     }
 
     public void PerformAction()
@@ -27,6 +29,7 @@ public class EnemyActions {
                 }
             case ComponentType.Attack:
                 {
+                    EnemyStats.enemyStatsInstance.StartCoroutine(EnemyAttackAnim());
                     PlayerStats.playerStatsInstance.Damage(nextAction.modifier + EnemyStats.enemyStatsInstance.baseAttack);
                     Debug.Log("Enemy Attacked");
                     break;
@@ -49,6 +52,13 @@ public class EnemyActions {
                 }
         }
         nextAction = GetAction();
+    }
+
+    IEnumerator EnemyAttackAnim()
+    {
+        EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(1.5f);
+        PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
     }
 
     public Action GetNextAction()
