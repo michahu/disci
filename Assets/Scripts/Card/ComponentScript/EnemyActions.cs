@@ -40,6 +40,8 @@ public class EnemyActions {
                 }
             case ComponentType.Buff:
                 {
+                    EnemyStats.enemyStatsInstance.StartCoroutine(EnemyBuffAnim());
+
                     EnemyStats.enemyStatsInstance.baseAttack += nextAction.modifier;
                     Debug.Log("Enemy buffed");
                     break;
@@ -58,6 +60,12 @@ public class EnemyActions {
         EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(1.5f);
         PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
+        yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator EnemyBuffAnim () 
+    {
+        EnemyStats.enemyStatsInstance.animator.SetTrigger("Heal");
         yield return new WaitForSeconds(1f);
     }
 
