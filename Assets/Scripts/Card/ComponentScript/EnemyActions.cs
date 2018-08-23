@@ -58,6 +58,7 @@ public class EnemyActions {
         EnemyStats.enemyStatsInstance.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(1.5f);
         PlayerStats.playerStatsInstance.animator.SetTrigger("On Hit");
+        yield return new WaitForSeconds(1f);
     }
 
     public Action GetNextAction()

@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour {
     {
         EndTurnButton.SetActive(false);
         EnemyStats.enemyStatsInstance.DoSomething();
+        if (PlayerStats.playerStatsInstance.currentHealth > 0)
         Advance();
     }
 

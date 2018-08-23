@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4243,7 +4243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.24468994, y: 224.32}
+  m_AnchoredPosition: {x: 0.2446289, y: 224.32}
   m_SizeDelta: {x: -0.5, y: 452.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &342476168
@@ -6297,14 +6297,6 @@ MonoBehaviour:
   maxHealth: 20
   healthText: {fileID: 37449352}
   armorText: {fileID: 328191994}
-  enemyActions:
-    actions:
-    - explanation: 'Attack 2 '
-      action: 0
-      modifier: 2
-    - explanation: Buff Attack 2
-      action: 3
-      modifier: 2
 --- !u!1001 &532497545
 Prefab:
   m_ObjectHideFlags: 0
@@ -7402,8 +7394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0000047683716}
+  m_SizeDelta: {x: 0, y: -10.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638078813
 MonoBehaviour:
@@ -13124,6 +13116,7 @@ MonoBehaviour:
   combat: {fileID: 342476168}
   EndTurnButton: {fileID: 653285573}
   RoundOverPanel: {fileID: 664063017}
+  RoundNumber: 0
 --- !u!114 &1203448413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13153,6 +13146,7 @@ MonoBehaviour:
   a4: {fileID: 1219988186}
   feedbackText: {fileID: 1714184580}
   timeRemainingPanel: {fileID: 58754307}
+  isQuestionActive: 0
 --- !u!1 &1215689823
 GameObject:
   m_ObjectHideFlags: 0
@@ -13336,8 +13330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_SizeDelta: {x: 0, y: -9.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224067158
 MonoBehaviour:
@@ -17139,7 +17133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.34800002}
   m_AnchorMax: {x: 0.5, y: 0.34800002}
-  m_AnchoredPosition: {x: 17, y: 262}
+  m_AnchoredPosition: {x: 17, y: 256}
   m_SizeDelta: {x: 245.3, y: 100.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714184580
