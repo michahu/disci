@@ -110,7 +110,7 @@ public class ShopManager : MonoBehaviour {
         GameObject newCard = Instantiate(CardPrefab);
         newCard.transform.SetParent(this.transform, false);
 
-        newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = c.artwork;
+        newCard.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(c.name);
         newCard.transform.GetChild(2).GetComponent<Text>().text = c.name;
         newCard.transform.GetChild(3).GetComponent<Text>().text = c.description;
         newCard.transform.GetChild(4).GetComponent<Text>().text = c.goldCost.ToString();

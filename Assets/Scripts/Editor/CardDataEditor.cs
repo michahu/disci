@@ -21,7 +21,7 @@ public class CardDataEditor : EditorWindow  {
 
         if (cardGroup != null)
         {
-            Debug.Log("Got here");
+            // Debug.Log("Got here");
             SerializedObject serializedObject = new SerializedObject(this);
             SerializedProperty serializedProperty = serializedObject.FindProperty("cardGroup");
 

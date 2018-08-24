@@ -22,7 +22,7 @@ public class Card {
     }
 
     public new string name;
-    public Sprite artwork;
+    // public Sprite artwork;
     public string description;
     public int goldCost;
     public int manaCost;
