@@ -72,6 +72,11 @@ public class CardController : MonoBehaviour {
                     // Debug.Log("Added Heal Component");
                     break;
             }
+            case ComponentType.Mana:
+            {
+                    cardComponents.Add(new ManaComponent(modifier));
+                    break;
+            }
         }
     }
 

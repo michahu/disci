@@ -12,5 +12,5 @@ public class CardComponent
 [System.Serializable]
 public enum ComponentType
 {
-   Attack, Armor, Heal, Buff, Debuff
+   Attack, Armor, Heal, Buff, Debuff, Mana
 }

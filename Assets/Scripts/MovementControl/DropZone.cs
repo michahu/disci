@@ -12,7 +12,7 @@ public class DropZone : MonoBehaviour, IDropHandler {
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;
 
-        if (d != null && c.manaCost <= PlayerStats.playerStatsInstance.mana)
+        if (d != null && c.manaCost <= PlayerStats.playerStatsInstance.currentMana)
         {
             d.returnParent = this.transform;
 

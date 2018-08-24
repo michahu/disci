@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,8 +24,11 @@ public class PlayerStats : CharacterStats {
 
     string EndGame = "You lost!";
 
+    public event Action<int> OnManaChanged;
+
     public int maxHealth = 10;
-    public int mana = 3;
+    public int maxMana = 1;
+    public int currentMana;
 
     public Text healthText;
     public Text armorText;
@@ -34,15 +38,17 @@ public class PlayerStats : CharacterStats {
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         currentHealth = maxHealth;
+        currentMana = maxMana;
 
         armor = 0;
 
         healthText.text = currentHealth.ToString();
         armorText.text = armor.ToString();
-        manaText.text = mana.ToString();
+        manaText.text = currentMana.ToString();
 
         GetComponent<CharacterStats>().OnHealthChanged += OnHealthTextChanged;
         GetComponent<CharacterStats>().OnArmorChanged += OnArmorTextChanged;
+        OnManaChanged += OnManaTextChanged;
     }
 
     
@@ -64,16 +70,33 @@ public class PlayerStats : CharacterStats {
         armorText.text = newArmor.ToString();
     }
 
+    void OnManaTextChanged(int newMana)
+    {
+        manaText.text = newMana.ToString();
+    }
+
     public void Mana(int cost)
     {
-        mana -= cost;
-        manaText.text = mana.ToString();
+        currentMana -= cost;
+
+        if (OnManaChanged != null)
+        {
+            OnManaChanged(currentMana);
+        }
     }
 
     // shitty fix
     public void ResetMana()
     {
-        mana = 3;
-        manaText.text = mana.ToString();
+        currentMana = maxMana;
+        if (OnManaChanged != null)
+        {
+            OnManaChanged(currentMana);
+        }
+    }
+
+    public void IncreaseMana(int ManaValue)
+    {
+        maxMana += ManaValue;
     }
 }
