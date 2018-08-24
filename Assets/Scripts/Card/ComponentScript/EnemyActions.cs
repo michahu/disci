@@ -30,7 +30,7 @@ public class EnemyActions {
                 {
                     EnemyStats.enemyStatsInstance.StartCoroutine(EnemyAttackAnim());
                     PlayerStats.playerStatsInstance.Damage(nextAction.modifier + EnemyStats.enemyStatsInstance.baseAttack);
-                    Debug.Log("Enemy Attacked");
+                    // Debug.Log("Enemy Attacked");
                     break;
                 }
             case ComponentType.Heal:
@@ -43,7 +43,7 @@ public class EnemyActions {
                     EnemyStats.enemyStatsInstance.StartCoroutine(EnemyBuffAnim());
 
                     EnemyStats.enemyStatsInstance.baseAttack += nextAction.modifier;
-                    Debug.Log("Enemy buffed");
+                    // Debug.Log("Enemy buffed");
                     break;
                 }
             case ComponentType.Debuff:
@@ -77,7 +77,7 @@ public class EnemyActions {
     private Action GetAction()
     {
         Action ret = actions[random.Next(actions.Count)];
-        Debug.Log("Next action is " + ret.explanation);
+        // Debug.Log("Next action is " + ret.explanation);
         return ret;
     }
         

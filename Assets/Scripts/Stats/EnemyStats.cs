@@ -28,6 +28,7 @@ public class EnemyStats : CharacterStats {
 
     public Text healthText;
     public Text armorText;
+    public Text nextAction;
 
     private string enemyActionsFileName = "enemy.json";
     private EnemyActions enemyActions;
@@ -36,6 +37,8 @@ public class EnemyStats : CharacterStats {
     {
         enemyActions = new EnemyActions(LoadEnemyActions());
         // SaveGameData();
+        UpdateNextAction();
+
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         currentHealth = maxHealth;
@@ -49,9 +52,15 @@ public class EnemyStats : CharacterStats {
         GetComponent<CharacterStats>().OnArmorChanged += OnArmorTextChanged;
     }
 
+    private void UpdateNextAction()
+    {
+        nextAction.text = enemyActions.GetNextAction().explanation;
+    }
+
     public void DoSomething()
     {
         this.enemyActions.PerformAction();
+        UpdateNextAction();
     }
 
     public override void Die()
