@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10875,6 +10875,7 @@ GameObject:
   - component: {fileID: 653260928}
   - component: {fileID: 991657693}
   - component: {fileID: 991657694}
+  - component: {fileID: 991657695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10922,6 +10923,17 @@ MonoBehaviour:
   healthText: {fileID: 180076004}
   armorText: {fileID: 845268609}
   manaText: {fileID: 998550321}
+--- !u!114 &991657695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991657692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2585d50b182a6402d91f3f860bdd511c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &991880266
 GameObject:
   m_ObjectHideFlags: 0
