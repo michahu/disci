@@ -10876,6 +10876,7 @@ GameObject:
   - component: {fileID: 991657693}
   - component: {fileID: 991657694}
   - component: {fileID: 991657695}
+  - component: {fileID: 991657696}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10934,6 +10935,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2585d50b182a6402d91f3f860bdd511c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FreeShield: {fileID: 1554920588}
+--- !u!114 &991657696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991657692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b1d997b352e4c35a4a2c891c9a5f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreeSword: {fileID: 1215689823}
 --- !u!1 &991880266
 GameObject:
   m_ObjectHideFlags: 0
