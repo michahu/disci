@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShieldParent : MonoBehaviour {
 
     public GameObject FreeShield;
+    public GameObject hand_l;
 
     public void SetParent(GameObject hand_l) {
 
@@ -12,9 +13,5 @@ public class ShieldParent : MonoBehaviour {
         Debug.Log("Shield's Parent: " + FreeShield.transform.parent.parent.name);
     }
 
-    public void DetachFromParent() {
-
-        transform.parent = null;
-    }
 
 }

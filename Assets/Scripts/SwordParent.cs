@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwordParent : MonoBehaviour {
 
     public GameObject FreeSword;
+    public GameObject hand_r;
 
     public void SetParent(GameObject hand_r) {
 
@@ -12,8 +13,5 @@ public class SwordParent : MonoBehaviour {
         Debug.Log("Sword's Parent: " + FreeSword.transform.parent.parent.name);
     }
 
-    public void DetachFromParent() {
-
-        transform.parent = null;
-    }
+  
 }
