@@ -14,5 +14,8 @@ public class ArmorComponent : CardComponent {
     public override void Action()
     {
         PlayerStats.playerStatsInstance.Armor(ArmorValue);
+        PlayerStats.playerStatsInstance.animator.SetTrigger("Block");
     }
 }
+
+

@@ -14,5 +14,8 @@ public class HealComponent : CardComponent {
     public override void Action()
     {
         PlayerStats.playerStatsInstance.Heal(HealValue);
+        PlayerStats.playerStatsInstance.animator.SetTrigger("Buff");
     }
 }
+
+
