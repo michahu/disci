@@ -9,6 +9,7 @@ public class EnemyActions {
     private System.Random random;
     private Action nextAction;
     private MonoBehaviour mono;
+    private int turn = 0;
 
     // @TODO: maybe consider using the automatic constructor? how would that work?
     public EnemyActions(EnemyActions enemyActions) {
@@ -76,9 +77,9 @@ public class EnemyActions {
 
     private Action GetAction()
     {
-        Action ret = actions[random.Next(actions.Count)];
+        // Action ret = actions[random.Next(actions.Count)];
         // Debug.Log("Next action is " + ret.explanation);
-        return ret;
+        return actions[turn++ % 2];
     }
         
 }

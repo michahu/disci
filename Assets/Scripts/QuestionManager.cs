@@ -91,6 +91,9 @@ public class QuestionManager : MonoBehaviour {
 
     public void GetQuestion()
     {
+        // bandaid fix for if we run out of questions
+        if (unanswered.Count == 0) unanswered = questions.ToList<Question>();
+
         isQuestionActive = true;
         timeRemaining = timeTotal;
 
