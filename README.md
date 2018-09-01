@@ -5,9 +5,7 @@ This Unity project is a game that combines elements of card games like Hearthsto
 Our alpha version is out! Mac and Windows builds can be found on my GitHub. If you're interested in giving feedback, feel free to ping me at myhu@princeton.edu.
 
 ### Team:
-Hunter Sieben
-Jason Tan
-Michael Hu
+Hunter Sieben, Jason Tan, Michael Hu
 
 ### Languages:
 C#, JSON
