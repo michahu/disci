@@ -46,8 +46,9 @@ public class QuestionManager : MonoBehaviour {
 
     public Text timeRemainingPanel;
     private bool isQuestionActive;
-    private float timeRemaining;
-    private float timeTotal = 10f;
+    private float elapsedTime;
+    // private float timeTotal = 10f;
+    const float maxTime = 30f;
 
     // Use this for initialization
     void Start () {
@@ -68,10 +69,10 @@ public class QuestionManager : MonoBehaviour {
     void Update () {
         if (isQuestionActive)
         {
-            timeRemaining -= Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             UpdateTimeRemaining();
 
-            if (timeRemaining <= 0f)
+            if (elapsedTime >= maxTime)
             {
                 Incorrect();
                 GameManager.instance.Advance();
@@ -95,7 +96,7 @@ public class QuestionManager : MonoBehaviour {
         if (unanswered.Count == 0) unanswered = questions.ToList<Question>();
 
         isQuestionActive = true;
-        timeRemaining = timeTotal;
+        elapsedTime = 0;
 
         int rand = UnityEngine.Random.Range(0, unanswered.Count);
         currentQuestion = unanswered[rand];
@@ -194,7 +195,7 @@ public class QuestionManager : MonoBehaviour {
     }
     private void UpdateTimeRemaining()
     {
-        timeRemainingPanel.text = "Time: " + Mathf.Round(timeRemaining).ToString();
+        timeRemainingPanel.text = "Time: " + Mathf.Round(elapsedTime).ToString();
     }
 
 }
