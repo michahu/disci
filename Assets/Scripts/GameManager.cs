@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour {
     public GameObject RoundOverPanel;
     public int RoundNumber;
 
+    // camera movement
+    public Camera camera;
+    private Vector3 p1;
+    private Vector3 p2;
+    private Vector3 velocity = Vector3.zero;
+
     /*
      * 0 = qa
      * 1 = feedback
@@ -50,6 +56,8 @@ public class GameManager : MonoBehaviour {
         canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
         gameState = 0;
         RoundNumber = 0;
+        p1 = new Vector3(336.63f, -119.92f, -2.15f);
+        p2 = new Vector3(336.21f, -121.75f, 5.47f);
     }
 
     // don't like this
@@ -65,6 +73,7 @@ public class GameManager : MonoBehaviour {
             RoundNumber++;
         } else if (gameState == 3)
         {
+            StartCoroutine(MoveCamera(p1, p2, 1.0f));
             EndTurnButton.SetActive(true);
         }
 
@@ -94,6 +103,15 @@ public class GameManager : MonoBehaviour {
     public void ReturnToEnvironment() 
     {
         SceneManager.LoadScene("Environment Scene");
+    }
+
+    IEnumerator MoveCamera(Vector3 p1, Vector3 p2, float duration) 
+    {
+        for (float t = 0f; t < duration; t += Time.deltaTime)
+        {
+            camera.transform.position = Vector3.Lerp(p1, p2, t / duration);
+        }
+        yield return 0;
     }
 
 }

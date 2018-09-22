@@ -3469,7 +3469,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &282840814
@@ -3589,6 +3589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff36f2e819d6fb46bea5d17ee877707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardsInHand: []
 --- !u!1001 &291960265
 Prefab:
   m_ObjectHideFlags: 0
@@ -13148,6 +13149,7 @@ MonoBehaviour:
   EndTurnButton: {fileID: 653285573}
   RoundOverPanel: {fileID: 664063017}
   RoundNumber: 0
+  camera: {fileID: 282840813}
 --- !u!114 &1203448413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13159,6 +13161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff36f2e819d6fb46bea5d17ee877707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardsInHand: []
 --- !u!114 &1203448414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13177,6 +13180,7 @@ MonoBehaviour:
   a4: {fileID: 1219988186}
   feedbackText: {fileID: 1714184580}
   timeRemainingPanel: {fileID: 58754307}
+  totalTime: 0
 --- !u!1 &1215689823
 GameObject:
   m_ObjectHideFlags: 0
