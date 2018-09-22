@@ -21,7 +21,6 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
 
     }
 
-
     void Update ()
     {
         // will have to set up ShopManager parent potentially
@@ -35,5 +34,21 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
             else Money.AddMoney((int) 0.5 * card.goldCost);
 
         }
+    }
+
+    public void DestroyCard()
+    {
+        //Debug.Log("Got here");
+        List<GameObject> hand = Hand.HandInstance.cardsInHand;
+        //foreach (GameObject card in hand)
+        //{
+        //    Debug.Log(card);
+        //}
+        hand.Remove(this.gameObject);
+        //foreach (GameObject card in hand)
+        //{
+        //    Debug.Log(card);
+        //}
+        Destroy(this.gameObject);
     }
 }
