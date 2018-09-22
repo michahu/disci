@@ -25,6 +25,11 @@ public class ShopManager : MonoBehaviour {
         Card[] cards = GameManager.instance.GetComponent<CardController>()
             .GetCardGroup(0).cards;
 
+        // add some elementary cards
+        deck.Add(CreateCard(cards[0]));
+        deck.Add(CreateCard(cards[0]));
+        deck.Add(CreateCard(cards[1]));
+
         for (int i = 0; i < cards.Length; i++)
         {
             Card c = cards[i];
