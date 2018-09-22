@@ -16,7 +16,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!isDraggable) return;
+        if (!isDraggable) eventData.pointerDrag = null;
         returnParent = this.transform.parent;
         this.transform.SetParent(this.transform.parent.parent);
         // origin = transform.position;
@@ -27,13 +27,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!isDraggable) return;
+        if (!isDraggable) eventData.pointerDrag = null;
         this.transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!isDraggable) return;
+        if (!isDraggable) eventData.pointerDrag = null;
         this.transform.SetParent(returnParent);
         // transform.position = origin;
         // Debug.Log("END DRAG");
