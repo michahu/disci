@@ -49,6 +49,8 @@ public class QuestionManager : MonoBehaviour {
     private float elapsedTime;
     // private float timeTotal = 10f;
     const float maxTime = 30f;
+    public float totalTime = 0f;
+    public PlayerRecords playerRecords;
 
     // Use this for initialization
     void Start () {
@@ -57,7 +59,7 @@ public class QuestionManager : MonoBehaviour {
         // incorrect = new List<Question>();
         // questionCount = 0;
         questionTracker = new QuestionTracker();
-
+        playerRecords = new PlayerRecords();
         if (unanswered == null || unanswered.Count == 0)
         {
             unanswered = questions.ToList<Question>();
@@ -78,6 +80,12 @@ public class QuestionManager : MonoBehaviour {
                 GameManager.instance.Advance();
             }
         }
+    }
+
+    public void SubmitNewScores()
+    {
+        double averageTime = (double)totalTime / questionTracker.questionsTotal;
+        if (averageTime > playerRecords.fastestTime) playerRecords.fastestTime = averageTime;
     }
 
     public string GetStats()
@@ -162,6 +170,8 @@ public class QuestionManager : MonoBehaviour {
 
     private void Incorrect()
     {
+        double questionTime = elapsedTime;
+        totalTime += elapsedTime;
         questionTracker.Incorrect(currentQuestion);
         isQuestionActive = false;
         feedbackText.text = "The correct answer was \"" + currentQuestion.answers[(int)currentQuestion.ans] + "\"";
@@ -170,6 +180,8 @@ public class QuestionManager : MonoBehaviour {
     public void Correct()
     {
         // correct.Add(currentQuestion);
+        double questionTime = elapsedTime;
+        totalTime += elapsedTime;
         questionTracker.Correct(currentQuestion);
         isQuestionActive = false;
         Money.AddMoney(1);
