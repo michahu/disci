@@ -11,9 +11,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-    public static GameManager Instance { get { return instance; } }
-
-    private void Awake()
+    void Awake()
     {
         if (instance != null && instance != this)
         {
@@ -87,6 +85,7 @@ public class GameManager : MonoBehaviour {
 
     public void EndRound (string EndGame) 
     {
+        QuestionManager.questionManagerInstance.SubmitNewScores();
         EndGame = EndGame + "\n" + QuestionManager.questionManagerInstance.GetStats();
         RoundOverPanel.SetActive(true);
         RoundOverPanel.GetComponentInChildren<Text>().text = EndGame;

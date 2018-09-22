@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour {
 
-    private List<GameObject> cardsInHand = new List<GameObject>();
-    private int HAND_SIZE = 6;
+    private static Hand handInstance;
+
+    private Hand() {
+        cardsInHand = new List<GameObject>();
+    }
+
+    public static Hand HandInstance
+    {
+        get
+        {
+            if (handInstance == null)
+            {
+                handInstance = new Hand();
+            }
+            return handInstance;
+        }
+    }
+
+    public List<GameObject> cardsInHand;
+    const int HAND_SIZE = 4;
 
     private Deck d;
 
@@ -33,17 +51,14 @@ public class Hand : MonoBehaviour {
         card.transform.SetParent(this.transform);
     }
 
-    // there's something odd about the transform business that
-    // I need to think about
+    // ideally, remove nulls beforehand so you don't need to do the check
     public void OnCombatEnd()
     {
-        //foreach (transform t in this.transform)
-        //{
-        //    t.transform.setparent(d.transform);
-        //}
-
+        // ideally this happens beforehand
+        cardsInHand.RemoveAll(item => item == null);
         foreach (GameObject card in cardsInHand)
         {
+            // if (card == null) cardsInHand.Remove(card);
             card.transform.SetParent(d.transform);
         }
 

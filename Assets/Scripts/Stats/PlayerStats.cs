@@ -26,8 +26,8 @@ public class PlayerStats : CharacterStats {
 
     public event Action<int> OnManaChanged;
 
-    public int maxHealth = 10;
-    public int maxMana = 1;
+    public int maxHealth;
+    public int maxMana;
     public int currentMana;
 
     public Text healthText;

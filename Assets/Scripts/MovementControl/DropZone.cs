@@ -9,6 +9,7 @@ public class DropZone : MonoBehaviour, IDropHandler {
     {
         // Debug.Log("DROP FIRE");
 
+        CardHelper cardHelper = eventData.pointerDrag.GetComponent<CardHelper>();
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         Card c = eventData.pointerDrag.GetComponent<CardHelper>().card;
 
@@ -20,9 +21,8 @@ public class DropZone : MonoBehaviour, IDropHandler {
             {
                 c.onPlay();
             }
+            cardHelper.DestroyCard();
         }
-
-       
     } 
 
     public void OnCombatEnd()

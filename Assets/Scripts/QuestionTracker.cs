@@ -13,7 +13,7 @@ public class QuestionTracker {
 
     int questionsCorrect;
     int questionsIncorrect;
-    int questionsTotal;
+    public int questionsTotal;
 
     public QuestionTracker()
     {
@@ -89,6 +89,7 @@ public class QuestionTracker {
         return ret;
     }
 
+    
     public string GetStats()
     {
         StringBuilder sb = new StringBuilder();
@@ -118,6 +119,8 @@ public class QuestionTracker {
                 + (int) ((double) numCorrect / (numCorrect + numIncorrect) * 100)
                 + "%\n");
         }
+        sb.Append("Fastest Time: " + System.Math.Round(QuestionManager.questionManagerInstance.playerRecords.fastestTime, 2)
+                 + "s/question");
 
         return sb.ToString();
     }
