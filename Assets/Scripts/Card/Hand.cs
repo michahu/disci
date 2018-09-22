@@ -47,6 +47,7 @@ public class Hand : MonoBehaviour {
     public void Add(GameObject card)
     {
         // Debug.Log(this.gameObject.ToString());
+        card.GetComponent<Draggable>().isDraggable = true;
         cardsInHand.Add(card);
         card.transform.SetParent(this.transform);
     }
