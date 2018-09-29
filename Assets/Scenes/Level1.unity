@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.5748174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,8 +1035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -335, y: 104}
-  m_SizeDelta: {x: 109.8, y: 107}
+  m_AnchoredPosition: {x: -331, y: 110.75}
+  m_SizeDelta: {x: 141.05, y: 107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58754307
 MonoBehaviour:
@@ -13286,7 +13286,7 @@ MonoBehaviour:
   EndTurnButton: {fileID: 653285573}
   RoundOverPanel: {fileID: 664063017}
   RoundNumber: 0
-  camera: {fileID: 282840813}
+  cam: {fileID: 282840813}
 --- !u!114 &1203448413
 MonoBehaviour:
   m_ObjectHideFlags: 0
