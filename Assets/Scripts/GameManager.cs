@@ -39,10 +39,10 @@ public class GameManager : MonoBehaviour {
     public int RoundNumber;
 
     // camera movement
-    public Camera camera;
-    private Vector3 p1;
-    private Vector3 p2;
-    private Vector3 velocity = Vector3.zero;
+    public Camera cam;
+    private GameObject targetPosition;
+    private Boolean moveToBattle;
+    private Boolean moveToQuestion;
 
     /*
      * 0 = qa
@@ -56,8 +56,9 @@ public class GameManager : MonoBehaviour {
         canvasGroups = new CanvasGroup[] {qa, feedback, shop, combat};
         gameState = 0;
         RoundNumber = 0;
-        p1 = new Vector3(336.63f, -119.92f, -2.15f);
-        p2 = new Vector3(336.21f, -121.75f, 5.47f);
+        targetPosition = new GameObject();
+        moveToQuestion = true;
+        moveToBattle = false;
     }
 
     // don't like this
@@ -68,15 +69,32 @@ public class GameManager : MonoBehaviour {
         Helper.Switch(canvasGroups[mod(gameState - 1, 4)], canvasGroups[gameState]);
         if (gameState == 0)
         {
+            moveToQuestion = true;
+            moveToBattle = false;
             QuestionManager.questionManagerInstance.GetQuestion();
             PlayerStats.playerStatsInstance.ResetMana();
             RoundNumber++;
         } else if (gameState == 3)
         {
-            StartCoroutine(MoveCamera(p1, p2, 1.0f));
+            moveToQuestion = false;
+            moveToBattle = true;
             EndTurnButton.SetActive(true);
         }
 
+    }
+
+    private void Update()
+    {
+        if (moveToQuestion) 
+        {
+            targetPosition.transform.position = new Vector3(336.63f, -119.92f, -2.15f);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition.transform.position, Time.deltaTime);
+        }
+        else if (moveToBattle)
+        {
+            targetPosition.transform.position = new Vector3(336.21f, -121.75f, 5.47f);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition.transform.position, Time.deltaTime);
+        }
     }
 
     private int mod(int x, int m)
@@ -104,16 +122,6 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Environment Scene");
     }
-
-    IEnumerator MoveCamera(Vector3 p1, Vector3 p2, float duration) 
-    {
-        for (float t = 0f; t < duration; t += Time.deltaTime)
-        {
-            camera.transform.position = Vector3.Lerp(p1, p2, t / duration);
-        }
-        yield return 0;
-    }
-
 }
 
 
