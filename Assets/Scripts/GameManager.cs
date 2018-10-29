@@ -43,6 +43,15 @@ public class GameManager : MonoBehaviour {
     private GameObject targetPosition;
     private Boolean moveToBattle;
     private Boolean moveToQuestion;
+    public GameObject enemyStats;
+    public GameObject playerStats;
+    private Vector2 currentEnemyStatsUI;
+    private Vector2 currentPlayerStatsUI;
+    private Vector2 currentEnemyStatsUI1;
+    private Vector2 currentPlayerStatsUI1;
+
+    // Shop reference
+    public GameObject hand;
 
     /*
      * 0 = qa
@@ -57,6 +66,11 @@ public class GameManager : MonoBehaviour {
         gameState = 0;
         RoundNumber = 0;
         targetPosition = new GameObject();
+  
+        currentPlayerStatsUI = playerStats.GetComponent<RectTransform>().anchoredPosition;
+        currentEnemyStatsUI = enemyStats.GetComponent<RectTransform>().anchoredPosition;
+        currentPlayerStatsUI1 = new Vector2(-291, 38);
+        currentEnemyStatsUI1 = new Vector2(240, 38);
         moveToQuestion = true;
         moveToBattle = false;
     }
@@ -89,11 +103,23 @@ public class GameManager : MonoBehaviour {
         {
             targetPosition.transform.position = new Vector3(336.63f, -119.92f, -2.15f);
             cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition.transform.position, Time.deltaTime);
+
+
+
         }
         else if (moveToBattle)
         {
+            // moving cameras
             targetPosition.transform.position = new Vector3(336.21f, -121.75f, 5.47f);
             cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition.transform.position, Time.deltaTime);
+            playerStats.GetComponent<RectTransform>().anchoredPosition = currentPlayerStatsUI1;
+            enemyStats.GetComponent<RectTransform>().anchoredPosition = currentEnemyStatsUI1;
+
+            // scaling cards
+            foreach (Transform c in hand.transform)
+            {
+                c.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            }
         }
     }
 
