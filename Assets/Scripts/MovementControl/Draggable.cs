@@ -7,12 +7,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     // Vector3 origin;
     public Transform returnParent;
-    public bool isDraggable;
-
-    void Start()
-    {
-        isDraggable = false;
-    }
+    public bool isDraggable = false;
+    public int x;
 
     public void OnBeginDrag(PointerEventData eventData)
     {

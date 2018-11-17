@@ -140,6 +140,7 @@ public class ShopManager : MonoBehaviour {
         newCard.transform.GetChild(5).GetComponent<Text>().text = card.transform.GetChild(5).GetComponent<Text>().text;
 
         newCard.GetComponent<CardHelper>().card = card.GetComponent<CardHelper>().card;
+        newCard.GetComponent<Draggable>().isDraggable = true;
 
         return newCard;
     }

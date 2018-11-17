@@ -23,6 +23,7 @@ public class Deck : MonoBehaviour {
 
     public void Add(GameObject card)
     {
+        card.GetComponent<Draggable>().isDraggable = true;
         cardsInDeck.Add(card);
         card.transform.SetParent(this.transform);
     }
@@ -36,6 +37,7 @@ public class Deck : MonoBehaviour {
     {
         int i = cardsInDeck.Count - 1;
         GameObject c = cardsInDeck[i];
+        Debug.Log(c.GetComponent<Draggable>().isDraggable);
         // Debug.Log("Returning " + c.name);
         cardsInDeck.RemoveAt(i);
         return c;
