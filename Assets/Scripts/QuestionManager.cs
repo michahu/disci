@@ -25,7 +25,7 @@ public class QuestionManager : MonoBehaviour {
     }
 
     private Question[] questions;
-    private string gameDataFileName = "questions.json";
+    private string gameDataFileName;
 
 
     // question tracking
@@ -54,6 +54,9 @@ public class QuestionManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        int roundNumber = GameObject.Find("Video").GetComponent<VideoController>().GetRoundNumber();
+        gameDataFileName = Application.dataPath + "/StreamingAssets/Video" + roundNumber + ".json";
+
         questions = LoadGameData();
         // correct = new List<Question>();
         // incorrect = new List<Question>();
