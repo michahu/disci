@@ -25,6 +25,7 @@ public class EnemyStats : CharacterStats {
     public Animator animator;
 
     public int maxHealth;
+    public bool poisoned;
 
     public Text healthText;
     public Text armorText;

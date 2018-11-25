@@ -1,1 +1,8 @@
-{"cards":[{"cardComponents":[{"componentType":0,"modifier":3}],"name":"Forge God's Sword","description":"Deal 3 damage.","goldCost":1,"manaCost":1},{"cardComponents":[{"componentType":1,"modifier":2}],"name":"Noble Lion Shield","description":"Block 2 damage.","goldCost":1,"manaCost":1},{"cardComponents":[{"componentType":2,"modifier":3}],"name":"Small Healing Pot","description":"Heal 3 damage.","goldCost":1,"manaCost":1},{"cardComponents":[{"componentType":5,"modifier":1}],"name":"Small Mana Potion","description":"Gain 1 maximum mana.","goldCost":2,"manaCost":1}]}
+{"cards":[
+    {"cardComponents":[{"componentType":0,"modifier":3}],"name":"Forge God's Sword","description":"Deal 3 damage.","goldCost":1,"manaCost":1},
+    {"cardComponents":[{"componentType":1,"modifier":2}],"name":"Noble Lion Shield","description":"Block 2 damage.","goldCost":1,"manaCost":1},
+    {"cardComponents":[{"componentType":2,"modifier":3}],"name":"Small Healing Pot","description":"Heal 3 damage.","goldCost":1,"manaCost":1},
+    {"cardComponents":[{"componentType":5,"modifier":1}],"name":"Small Mana Potion","description":"Gain 1 maximum mana.","goldCost":2,"manaCost":1},
+    {"cardComponents":[{"componentType":6,"modifier":2}],"name":"Achyl's Death-Mist","description":"Deal 2 damage for 2 turns.","goldCost":2,"manaCost":2}
+  ]
+}

@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour {
             RoundNumber++;
         } else if (gameState == 3)
         {
+            if (EnemyStats.enemyStatsInstance.poisoned == true) 
             moveToQuestion = false;
             moveToBattle = true;
             EndTurnButton.SetActive(true);

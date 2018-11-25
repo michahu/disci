@@ -77,6 +77,11 @@ public class CardController : MonoBehaviour {
                     cardComponents.Add(new ManaComponent(modifier));
                     break;
             }
+            case ComponentType.Poison:
+                {
+                    cardComponents.Add(new PoisonComponent(modifier));
+                    break;
+                }
         }
     }
 
