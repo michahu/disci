@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour {
 
     public void ReturnToEnvironment() 
     {
-        SceneManager.LoadScene("Environment Scene");
+        SceneManager.LoadScene("Environment");
     }
 }
 
