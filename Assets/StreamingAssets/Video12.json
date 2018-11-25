@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "What law is the basis of limiting reagants?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "Conservation of Mass",
+                "Transitive States",
+                "Balanced Reactions",
+                "Large Numbers"
+            ]
+        },
+        {
+            "q": "What does limiting reagants mean?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "High cost of chemicals",
+                "One reactant running out first",
+                "Wasteful chemical usage",
+                "Government regulation"
+            ]
+        },
+        {
+            "q": "",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "Absorbs",
+                "Loses",
+                "Shares",
+                "Resists"
+            ]
+        },
+        {
+            "q": "BeCl2 is a substance similar to NaCl. What kind of bond does it have?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "Ionic",
+                "Metallic",
+                "Covalent",
+                "Polar"
+            ]
+        },
+        {
+            "q": "What is the difference between polar and non-polar covalent bonds?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Two vs. three atoms involved",
+                "Single vs. double bonds",
+                "Cations vs. anions",
+                "Equal vs. unequal sharing of electrons"
+            ]
+        },
+        {
+            "q": "What trait determines if an atom is more likely to attract an electron than another?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "ELectronegativity",
+                "Atomic Energy",
+                "Dissolvability",
+                "Size"
+            ]
+        },
+        {
+            "q": "Diatomic molecules like H2, O2, & F2 have what bonds holding them?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Ionic Bonds",
+                "Non-polar Covalent Bonds",
+                "Polar Covalent Bonds",
+                "Metallic Bonds"
+            ]
+        },
+        {
+            "q": "Which of these bonds is strongest?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "London Dispersion Forces",
+                "Ionic Bonds",
+                "Metallic Bonds",
+                "Covalent Bonds"
+            ]
+        },
+        {
+            "q": "What kind of structure do metallic bonds forms?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "One-to-one",
+                "Pyramid",
+                "Two-to-two",
+                "Lattice"
+            ]
+        },
+        {
+            "q": "What is the goal of both the ionic and covalent bonds?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "To maximize charge",
+                "To attain a full outer electron shell",
+                "To make substances stronger",
+                "To generate energy"
+            ]
+        }
+    ]
+}

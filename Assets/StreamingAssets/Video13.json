@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "Who introduced the concept of the atom as the indivisible unit of matter?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "John Dalton",
+                "Neils Bohr",
+                "Albert Einstein",
+                "J.J. Thomson"
+            ]
+        },
+        {
+            "q": "What did Dalton call the smallest unit of matter?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Gluon",
+                "Atom",
+                "Quark",
+                "Spark"
+            ]
+        },
+        {
+            "q": "What French chemist developed the Law of Conservation of Mass?",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "Rousseau",
+                "Napoleon",
+                "Lavoisier",
+                "Dalton"
+            ]
+        },
+        {
+            "q": "What was name of the model that J.J. Thomson created?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "Plum Pudding Model",
+                "Heliocentric Model",
+                "Atomic Model",
+                "Conservative Model"
+            ]
+        },
+        {
+            "q": "What part of the atom did Thomson neglect in his model?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Electrons",
+                "Positive Charge",
+                "Bonds",
+                "Nucleus"
+            ]
+        },
+        {
+            "q": "What famous experiment led to Thomson's Plum Pudding Model?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "Cathode Ray Experiment",
+                "Gold Foil Experiment",
+                "Uncertain X-Ray Cat",
+                "Dropping Apple Experiment"
+            ]
+        },
+        {
+            "q": "Which experiment helped Ernest Rutherford further atomic theory?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Doping Experiment",
+                "Gold Foil Experiment",
+                "Fracking Experiment",
+                "Aluminum Experiment"
+            ]
+        },
+        {
+            "q": "What classification did Neils Bohr introduce for electron movement?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "Row and Columns",
+                "Bonds and Connections",
+                "Orbitals and Energy Levels",
+                "Circles and Squares"
+            ]
+        },
+        {
+            "q": "What contribution did Schrodinger add to the atomic model?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Nucleus",
+                "Neutrons",
+                "Sub-atomic particles",
+                "Electron cloud"
+            ]
+        },
+        {
+            "q": "What is the most up-to-date model of the atom?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Plum Pudding Model",
+                "Quantum Mechanic Model",
+                "Bohr Model",
+                "Rutherford Model"
+            ]
+        }
+    ]
+}

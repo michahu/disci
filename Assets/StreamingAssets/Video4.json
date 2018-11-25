@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "What family do Na, Li, & K belong to?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "Alkali Metals",
+                "Alkali-earth Metals",
+                "Noble Gases",
+                "Halogens"
+            ]
+        },
+        {
+            "q": "Which element is in the family of Halogens?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Fe",
+                "Ne",
+                "Li",
+                "U"
+            ]
+        },
+        {
+            "q": "What’s the name of the group of elements between columns 3 and 12?",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "Metals",
+                "Nonmetals",
+                "Transition Metals",
+                "Semi-metals"
+            ]
+        },
+        {
+            "q": "What are the elements from number 58 to 71 classified as?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Alkali Metals",
+                "Actinides",
+                "Noble Gases",
+                "Lanthanides"
+            ]
+        },
+        {
+            "q": "What are the rows of the periodic table called?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "Periods",
+                "Rows",
+                "Families",
+                "Columns"
+            ]
+        },
+        {
+            "q": "Which column are the Alkali-earth metals?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "q": "What is another name for the columns of the periodic table?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "Clans",
+                "Races",
+                "Families",
+                "Cults"
+            ]
+        },
+        {
+            "q": "Which of the following is NOT a transition metal?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Cu",
+                "Ag",
+                "Au",
+                "Al"
+            ]
+        },
+        {
+            "q": "What does the integer by each element tell us?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "# of protons",
+                "Order discovered",
+                "# of shells",
+                "Arbitrary"
+            ]
+        },
+        {
+            "q": "Which information can you NOT retrieve from looking at the Periodic Table?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Element names",
+                "Number of isotopes",
+                "Atomic number",
+                "Atomic mass"
+            ]
+        }
+    ]
+}

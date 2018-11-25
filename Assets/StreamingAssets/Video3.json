@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "What type of ion has a positive charge?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "Cation",
+                "Anion",
+                "Trion",
+                "Lion"
+            ]
+        },
+        {
+            "q": "What kind of bond is formed between a cation and an anion?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Metallic",
+                "Ionic",
+                "Carbon",
+                "Polar"
+            ]
+        },
+        {
+            "q": "Covalent bonds do not transfer electrons but rather _______ electrons.",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "Absorbs",
+                "Loses",
+                "Shares",
+                "Resists"
+            ]
+        },
+        {
+            "q": "BeCl2 is a substance similar to NaCl. What kind of bond does it have?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "Ionic",
+                "Metallic",
+                "Covalent",
+                "Polar"
+            ]
+        },
+        {
+            "q": "What is the difference between polar and non-polar covalent bonds?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Two vs. three atoms involved",
+                "Single vs. double bonds",
+                "Cations vs. anions",
+                "Equal vs. unequal sharing of electrons"
+            ]
+        },
+        {
+            "q": "What trait determines if an atom is more likely to attract an electron than another?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "ELectronegativity",
+                "Atomic Energy",
+                "Dissolvability",
+                "Size"
+            ]
+        },
+        {
+            "q": "Diatomic molecules like H2, O2, & F2 have what bonds holding them?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Ionic Bonds",
+                "Non-polar Covalent Bonds",
+                "Polar Covalent Bonds",
+                "Metallic Bonds"
+            ]
+        },
+        {
+            "q": "Which of these bonds is strongest?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "London Dispersion Forces",
+                "Ionic Bonds",
+                "Metallic Bonds",
+                "Covalent Bonds"
+            ]
+        },
+        {
+            "q": "What kind of structure do metallic bonds forms?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "One-to-one",
+                "Pyramid",
+                "Two-to-two",
+                "Lattice"
+            ]
+        },
+        {
+            "q": "What is the goal of both the ionic and covalent bonds?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "To maximize charge",
+                "To attain a full outer electron shell",
+                "To make substances stronger",
+                "To generate energy"
+            ]
+        }
+    ]
+}
