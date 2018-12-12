@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "What charge do Alkali Metals have?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "+1",
+                "-1",
+                "+2",
+                "-2"
+            ]
+        },
+        {
+            "q": "What family has zero charge?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Halogens",
+                "Noble Gases",
+                "Alkali Metals",
+                "Alkali-Earth Metals"
+            ]
+        },
+        {
+            "q": "In terms of electronegativity, which one has the smallest?",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "O",
+                "B",
+                "F",
+                "C"
+            ]
+        },
+        {
+            "q": "In terms of electronegativity, which one has the largest?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Pb",
+                "Sn",
+                "Ge",
+                "C"
+            ]
+        },
+        {
+            "q": "In terms of ionization energy, which one has the largest?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "S",
+                "P",
+                "Si",
+                "Cl"
+            ]
+        },
+        {
+            "q": "In terms of ionization energy, which one has the smallest?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Ca",
+                "Mg",
+                "Be",
+                "Ba"
+            ]
+        },
+        {
+            "q": "n terms of atomic radius, which one has the smallest?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "K",
+                "Cu",
+                "As",
+                "Br"
+            ]
+        },
+        {
+            "q": "n terms of atomic radius, which one has the largest?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "V",
+                "Nb",
+                "Ta",
+                "Db"
+            ]
+        },
+        {
+            "q": "What is the primary reason the ionic radius increase down a column?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "By nature",
+                "Too many particles",
+                "Outer shell electron farther",
+                "Electrons are stacked on each other"
+            ]
+        },
+        {
+            "q": "What trait is defined as the amount of energy required to remove an electron?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Removal energy",
+                "Electron energy",
+                "Potential energy",
+                "Ionization energy"
+            ]
+        }
+    ]
+}
