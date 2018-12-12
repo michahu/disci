@@ -54,7 +54,9 @@ public class QuestionManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        int roundNumber = GameObject.Find("Video").GetComponent<VideoController>().GetRoundNumber();
+        VideoController vc = GameObject.Find("Video").GetComponent<VideoController>();
+        vc.PauseVideo();
+        int roundNumber = vc.GetRoundNumber();
         gameDataFileName = Application.dataPath + "/StreamingAssets/Video" + roundNumber + ".json";
 
         questions = LoadGameData();

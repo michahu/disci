@@ -147,7 +147,8 @@ public class GameManager : MonoBehaviour {
 
     public void ReturnToEnvironment() 
     {
-        SceneManager.LoadScene("Environment");
+        SceneManager.LoadScene("Video");
+        GameObject.Find("Video").GetComponent<VideoController>().IncrementScene();
     }
 }
 

@@ -24,14 +24,19 @@ public class VideoController : MonoBehaviour
 
         videoPlayer.url = Application.dataPath + "/Videos/Video" + videoNumber + ".mp4";
 
-        SceneManager.sceneLoaded += IncrementScene;
+        //SceneManager.sceneLoaded += IncrementScene;
     }
 
     // currently busted
-    void IncrementScene(Scene scene, LoadSceneMode mode)
+    public void IncrementScene()
     {
-        // videoNumber++;
+        videoNumber++;
         videoPlayer.url = Application.dataPath + "/Videos/Video" + videoNumber + ".mp4";
+    }
+
+    public void PauseVideo()
+    {
+        videoPlayer.Pause();
     }
 
 }
