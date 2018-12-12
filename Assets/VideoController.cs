@@ -17,8 +17,15 @@ public class VideoController : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Video");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
         DontDestroyOnLoad(gameObject);
         videoNumber = 1;
 

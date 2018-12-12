@@ -8,6 +8,7 @@ TagManager:
   - MaterialText
   - MaterialRadioButton
   - ShopCard
+  - Video
   layers:
   - Default
   - TransparentFX

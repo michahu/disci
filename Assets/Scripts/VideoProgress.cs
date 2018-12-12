@@ -19,17 +19,17 @@ public class VideoProgress : MonoBehaviour {
 	}
 
 
-    private void Update()
+ //   private void Update()
 
-	{
+	//{
 		
-       if (videoPlayer.frameCount > 0) {
+ //      if (videoPlayer.frameCount > 0) {
 
-            progress.fillAmount = (float)videoPlayer.frame / (float)videoPlayer.frameCount;
+ //           progress.fillAmount = (float)videoPlayer.frame / (float)videoPlayer.frameCount;
 
 
-        }
-	}
+ //       }
+	//}
 
     public void OnDrag(PointerEventData eventData)
 
