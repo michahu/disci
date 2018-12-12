@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
             RoundNumber++;
         } else if (gameState == 3)
         {
-            if (EnemyStats.enemyStatsInstance.poisoned == true) 
+            if (EnemyStats.enemyStatsInstance.poisoned == true) EnemyStats.enemyStatsInstance.Damage(1);
             moveToQuestion = false;
             moveToBattle = true;
             EndTurnButton.SetActive(true);
@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour {
         {
             targetPosition.transform.position = new Vector3(336.63f, -119.92f, -2.15f);
             cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition.transform.position, Time.deltaTime);
-
-
+            playerStats.GetComponent<RectTransform>().anchoredPosition = currentPlayerStatsUI;
+            enemyStats.GetComponent<RectTransform>().anchoredPosition = currentEnemyStatsUI;
 
         }
         else if (moveToBattle)

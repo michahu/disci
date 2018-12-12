@@ -37,7 +37,7 @@ public class Deck : MonoBehaviour {
     {
         int i = cardsInDeck.Count - 1;
         GameObject c = cardsInDeck[i];
-        Debug.Log(c.GetComponent<Draggable>().isDraggable);
+        // Debug.Log(c.GetComponent<Draggable>().isDraggable);
         // Debug.Log("Returning " + c.name);
         cardsInDeck.RemoveAt(i);
         return c;
