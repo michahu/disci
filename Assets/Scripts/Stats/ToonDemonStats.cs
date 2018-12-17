@@ -4,35 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class EnemyStats : CharacterStats {
+public class ToonDemonStats : CharacterStats {
 
-    public static EnemyStats enemyStatsInstance;
+    public static ToonDemonStats toonDemonStatsInstance;
 
     void Awake()
     {
-        if (enemyStatsInstance != null && enemyStatsInstance != this)
+        if (toonDemonStatsInstance != null && toonDemonStatsInstance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            enemyStatsInstance = this;
+            toonDemonStatsInstance = this;
         }
     }
-
     string EndGame = "You won!";
 
-    public Animator animator;
-
-    private int maxHealth = 20;
+    private int maxHealth = 15;
     public bool poisoned;
-    public int dodge = 0;
+    public int dodge = 50;
 
     public Text healthText;
     public Text armorText;
     public Text nextAction;
 
-    private string enemyActionsFileName = "enemy.json";
+    private string enemyActionsFileName = "ToonDemon.json";
     private EnemyActions enemyActions;
 
     private void Start()
@@ -105,8 +102,9 @@ public class EnemyStats : CharacterStats {
     {
         string dataAsJson = JsonUtility.ToJson(enemyActions);
 
-        string filePath = Application.dataPath + "/StreamingAssets/enemy.json";
+        string filePath = Application.dataPath + "/StreamingAssets/ToonDemon.json";
         Debug.Log("file path: " + filePath);
         File.WriteAllText(filePath, dataAsJson);
     }
 }
+

@@ -14,7 +14,12 @@ public class DamageComponent : CardComponent {
     public override void Action()
     {
         PlayerStats.playerStatsInstance.animator.SetTrigger("Attack");
-        EnemyStats.enemyStatsInstance.Damage(DamageValue);
+        if (EnemyStats.enemyStatsInstance.dodge != 0) {
+            float x = EnemyStats.enemyStatsInstance.dodge / 100;
+            if (Random.value > x) EnemyStats.enemyStatsInstance.Damage(DamageValue);
+            else Debug.Log("Dodged the attack.");
+        }
+        else EnemyStats.enemyStatsInstance.Damage(DamageValue);
         EnemyStats.enemyStatsInstance.animator.SetTrigger("On Hit");
     }
 }

@@ -52,6 +52,11 @@ public class EnemyActions {
                     Debug.Log("Not implemented");
                     break;
                 }
+            case ComponentType.Mana:
+                {
+                    PlayerStats.playerStatsInstance.IncreaseMana(nextAction.modifier);
+                    break;
+                }
         }
         nextAction = GetAction();
     }
