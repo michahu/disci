@@ -1,14 +1,14 @@
 {
     "array": [
         {
-            "q": "What is an orbital?",
+            "q": "Whose rule states that every oribital needs to have at least one electron before moving to the next orbital?",
             "tags": "States",
             "ans": 0,
             "answers": [
-                "Space where you are likely to find an electron",
-                "A circular ring of electrons",
-                "A space ship's way of moving around a planet",
-                "The exact location an electron always is at"
+                "Hund's Rule",
+                "Hamarabi's Rule",
+                "Pauli's Rule",
+                "Schrodinger's Rule"
             ]
         },
         {
