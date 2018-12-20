@@ -4389,7 +4389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0624694ab72470d8ac63c575777664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: NewVideoScene
+  loadLevel: Video
   guiObject: {fileID: 765089709}
 --- !u!1001 &380564770
 Prefab:
