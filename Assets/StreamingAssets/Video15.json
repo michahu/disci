@@ -1,0 +1,114 @@
+{
+    "array": [
+        {
+            "q": "Whose rule states that every oribital needs to have at least one electron before moving to the next orbital?",
+            "tags": "States",
+            "ans": 0,
+            "answers": [
+                "Hund's Rule",
+                "Hamarabi's Rule",
+                "Pauli's Rule",
+                "Schrodinger's Rule"
+            ]
+        },
+        {
+            "q": "When we look at electrons, which category is the highest level?",
+            "tags": "States",
+            "ans": 1,
+            "answers": [
+                "Orbital",
+                "Energy Level",
+                "Spin",
+                "Sub-energy Level"
+            ]
+        },
+        {
+            "q": "How many sublevels are in energy level 3?",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "q": "What is the order of sublevels?",
+            "tags": "State Changes",
+            "ans": 0,
+            "answers": [
+                "s, p, d, f...",
+                "p, d, s, f...",
+                "s, f, d, p...",
+                "p, s, d, f..."
+            ]
+        },
+        {
+            "q": "How many electrons are in each orbital?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "q": "How many orbitals are in the d sublevel?",
+            "tags": "States",
+            "ans": 2,
+            "answers": [
+                "1",
+                "3",
+                "5",
+                "7"
+            ]
+        },
+        {
+            "q": "Which sublevel has 3 orbitals?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "d",
+                "f",
+                "s",
+                "p"
+            ]
+        },
+        {
+            "q": "What is the full electron configuration of Fluorine (F)?",
+            "tags": "State Changes",
+            "ans": 2,
+            "answers": [
+                "1s2",
+                "Bonds and Connections",
+                "Orbitals and Energy Levels",
+                "Circles and Squares"
+            ]
+        },
+        {
+            "q": "What contribution did Schrodinger add to the atomic model?",
+            "tags": "State Changes",
+            "ans": 3,
+            "answers": [
+                "Nucleus",
+                "Neutrons",
+                "Sub-atomic particles",
+                "Electron cloud"
+            ]
+        },
+        {
+            "q": "What is the most up-to-date model of the atom?",
+            "tags": "State Changes",
+            "ans": 1,
+            "answers": [
+                "Plum Pudding Model",
+                "Quantum Mechanic Model",
+                "Bohr Model",
+                "Rutherford Model"
+            ]
+        }
+    ]
+}
