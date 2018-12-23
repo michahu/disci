@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Loader : MonoBehaviour
 {
 
-    [SerializeField] private string loadLevel;
+    private string loadLevel = "Battle";
 
     void Start()
     {

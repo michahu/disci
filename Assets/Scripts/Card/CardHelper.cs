@@ -17,7 +17,7 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
         // bandaid fix?
         if (this.transform.parent.name == "Shop Panel")
         this.gameObject.GetComponentInParent<ShopManager>().Buy(this.gameObject);
-        RoundBought = GameManager.instance.RoundNumber;
+        RoundBought = BattleManager.instance.RoundNumber;
 
     }
 
@@ -29,7 +29,7 @@ public class CardHelper : MonoBehaviour, IPointerClickHandler{
             Deck.deckInstance.Remove(this.gameObject);
             Destroy(this.gameObject);
 
-            if (GameManager.instance.RoundNumber == RoundBought)
+            if (BattleManager.instance.RoundNumber == RoundBought)
                 Money.AddMoney(card.goldCost);
             else Money.AddMoney((int) 0.5 * card.goldCost);
 

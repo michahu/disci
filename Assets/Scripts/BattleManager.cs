@@ -7,9 +7,9 @@ using System;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-public class GameManager : MonoBehaviour {
+public class BattleManager : MonoBehaviour {
 
-    public static GameManager instance;
+    public static BattleManager instance;
 
     void Awake()
     {
@@ -148,7 +148,6 @@ public class GameManager : MonoBehaviour {
     public void ReturnToEnvironment() 
     {
         SceneManager.LoadScene("Environment");
-        GameObject.Find("Video").GetComponent<VideoController>().IncrementScene();
     }
 }
 

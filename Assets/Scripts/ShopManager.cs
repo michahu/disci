@@ -22,7 +22,7 @@ public class ShopManager : MonoBehaviour {
         deck = Deck.deckInstance;
 
         // there is potentially better way
-        Card[] cards = GameManager.instance.GetComponent<CardController>()
+        Card[] cards = BattleManager.instance.GetComponent<CardController>()
             .GetCardGroup(0).cards;
 
         // add some elementary cards

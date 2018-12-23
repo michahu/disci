@@ -71,7 +71,7 @@ public class EnemyStats : CharacterStats {
 
         EnemyStats.enemyStatsInstance.animator.SetTrigger("Die");
 
-        GameManager.instance.EndRound(EndGame);
+        BattleManager.instance.EndRound(EndGame);
     }
 
     void OnHealthTextChanged(int currentHealth)

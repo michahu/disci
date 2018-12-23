@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSwitch : MonoBehaviour {
 
-    [SerializeField] private string loadLevel;
+    // private string loadLevel = "Battle";
 
-	public void changescene(string loadLevel)
-
+	public void changeScene()
     {
-
-        SceneManager.LoadScene(loadLevel);
+        SceneManager.LoadScene("Battle");
     }
 
 }

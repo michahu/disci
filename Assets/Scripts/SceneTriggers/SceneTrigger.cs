@@ -1,34 +1,34 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTrigger : MonoBehaviour {
 
-    public GameObject guiObject;
-    public string LevelToLoad;
+    // public GameObject guiObject;
+    private string LevelToLoad = "Video";
 
 	void Start () {
         
-        guiObject.SetActive(false);
+        //guiObject.SetActive(false);
 
 	}
 	// can be OnTriggerStay
     void OnTriggerEnter (Collider other) {
 
-        if (other.gameObject.tag == "Player") {
-
-
-            guiObject.SetActive(true);
-            if (guiObject.activeInHierarchy == true && Input.GetButtonDown("Use"))
-            {
-
-                Application.LoadLevel(LevelToLoad);
-            }
-        }
+        SceneManager.LoadScene(LevelToLoad);
+        //if (other.gameObject.tag == "Player") {
+        //    guiObject.SetActive(true);
+        //    if (guiObject.activeInHierarchy == true && Input.GetButtonDown("Use"))
+        //    {
+        //        Application.LoadLevel(LevelToLoad);
+        //        SceneManager.LoadScene(LevelToLoad);
+        //    }
+        //}
 		
 	}
 
-	void OnTriggerExit()
-	{
-        guiObject.SetActive(false);
-	}
+	//void OnTriggerExit()
+	//{
+ //       guiObject.SetActive(false);
+	//}
 }

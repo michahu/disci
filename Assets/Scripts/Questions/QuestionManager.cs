@@ -54,9 +54,11 @@ public class QuestionManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        VideoController vc = GameObject.Find("Video").GetComponent<VideoController>();
-        vc.PauseVideo();
-        int roundNumber = vc.GetRoundNumber();
+
+        int roundNumber;
+        if (RoundManager.instance == null) roundNumber = 1;
+        else roundNumber = RoundManager.instance.GetRoundNumber();
+
         gameDataFileName = Application.dataPath + "/StreamingAssets/Video" + roundNumber + ".json";
 
         questions = LoadGameData();
@@ -82,7 +84,7 @@ public class QuestionManager : MonoBehaviour {
             if (elapsedTime >= maxTime)
             {
                 Incorrect();
-                GameManager.instance.Advance();
+                BattleManager.instance.Advance();
             }
         }
     }
@@ -133,7 +135,7 @@ public class QuestionManager : MonoBehaviour {
         {
             Incorrect();
         }
-        GameManager.instance.Advance();
+        BattleManager.instance.Advance();
     }
     public void UserSelectB()
     {
@@ -145,7 +147,7 @@ public class QuestionManager : MonoBehaviour {
         {
             Incorrect();
         }
-        GameManager.instance.Advance();
+        BattleManager.instance.Advance();
     }
     public void UserSelectC()
     {
@@ -157,7 +159,7 @@ public class QuestionManager : MonoBehaviour {
         {
             Incorrect();
         }
-        GameManager.instance.Advance();
+        BattleManager.instance.Advance();
         
     }
     public void UserSelectD()
@@ -170,7 +172,7 @@ public class QuestionManager : MonoBehaviour {
         {
             Incorrect();
         }
-        GameManager.instance.Advance();
+        BattleManager.instance.Advance();
     }
 
     private void Incorrect()

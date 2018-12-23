@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveLevel : MonoBehaviour {
 
-    [SerializeField] private string loadLevel;
+    private string loadLevel = "Battle";
 
     void OnTriggerEnter(Collider other) {
 
