@@ -12,18 +12,18 @@
             ]
         },
         {
-            "q": "When we look at electrons, which category is the highest level?",
+            "q": "Whose rule introduces spin as the fourth quantum number?",
             "tags": "States",
             "ans": 1,
             "answers": [
-                "Orbital",
-                "Energy Level",
-                "Spin",
-                "Sub-energy Level"
+                "Hanabi's Rule",
+                "Pauli's Exclusion Principle",
+                "Hund's Rule",
+                "Levi's Rule"
             ]
         },
         {
-            "q": "How many sublevels are in energy level 3?",
+            "q": "Give the full hand notation of Fluorine's electron configuration.",
             "tags": "States",
             "ans": 2,
             "answers": [
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "q": "What is the order of sublevels?",
+            "q": "Give the full hand notation of Magnesium's electron configuration.",
             "tags": "State Changes",
             "ans": 0,
             "answers": [
@@ -45,7 +45,7 @@
             ]
         },
         {
-            "q": "How many electrons are in each orbital?",
+            "q": "Give the short hand notation of Mercury's electron configuration.",
             "tags": "State Changes",
             "ans": 1,
             "answers": [
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "q": "Which sublevel has 3 orbitals?",
+            "q": "Which of these diagrams can actually be an electron configuration?",
             "tags": "State Changes",
             "ans": 3,
             "answers": [
@@ -78,14 +78,14 @@
             ]
         },
         {
-            "q": "What is the full electron configuration of Fluorine (F)?",
+            "q": "Which rule states that you need to fill the lowest orbital first?",
             "tags": "State Changes",
             "ans": 2,
             "answers": [
-                "1s2",
-                "Bonds and Connections",
-                "Orbitals and Energy Levels",
-                "Circles and Squares"
+                "Hund's Rule",
+                "Pauli's Principle",
+                "Aufbau Principle",
+                "Cho's Principle"
             ]
         },
         {
