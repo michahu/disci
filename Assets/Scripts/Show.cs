@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowDeck : MonoBehaviour {
+public class Show : MonoBehaviour {
 
-    public GameObject deck;
+    public GameObject x;
     private bool isVisible = false;
 
 	// Use this for initialization
 	void Start () {
-        deck.SetActive(false);
+        x.SetActive(false);
 	}
 	
 	// Update is called once per frame
-	public void ToggleDeck () {
-        deck.SetActive(!isVisible);
+	public void Toggle () {
+        x.SetActive(!isVisible);
         isVisible = !isVisible;
 	}
 }
