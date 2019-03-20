@@ -89,7 +89,7 @@
             ]
         },
         {
-            "q": "What contribution did Schrodinger add to the atomic model?",
+            "q": "Give the short hand notation for Barium's electron configuration.",
             "tags": "State Changes",
             "ans": 3,
             "answers": [
@@ -100,7 +100,7 @@
             ]
         },
         {
-            "q": "What is the most up-to-date model of the atom?",
+            "q": "",
             "tags": "State Changes",
             "ans": 1,
             "answers": [
