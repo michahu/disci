@@ -19,7 +19,6 @@ public class ButtonTrig : MonoBehaviour {
 	{
 		
         if (other.gameObject.tag == "Player") {
-
             guiObject.SetActive(true);
             if (guiObject.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E)) {
 
