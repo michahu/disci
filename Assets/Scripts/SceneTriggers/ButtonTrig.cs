@@ -7,20 +7,15 @@ using UnityEngine.UI;
 public class ButtonTrig : MonoBehaviour {
 
     [SerializeField] private string loadLevel;
-    public GameObject guiObject;
-
-	void Start () {
-
-        guiObject.SetActive(false);
-		
-	}
+    public GameObject panel;
+    public Text instruction;
 
 	void OnTriggerStay (Collider other)
 	{
-		
+        instruction.text = "Jump into your first video by pressing [E] on your keyboard!";
         if (other.gameObject.tag == "Player") {
-            guiObject.SetActive(true);
-            if (guiObject.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E)) {
+            panel.SetActive(true);
+            if (panel.activeInHierarchy == true && Input.GetKeyDown(KeyCode.E)) {
 
                 SceneManager.LoadScene(loadLevel);
             }
@@ -29,8 +24,7 @@ public class ButtonTrig : MonoBehaviour {
 
 	void OnTriggerExit()
 	{
-
-        guiObject.SetActive(false);
+        panel.SetActive(false);
 	}
 
 }
