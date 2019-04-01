@@ -1,0 +1,9 @@
+{
+    "actions": [
+        {
+            "explanation": "Attack and Heal",
+            "action": [0, 3],
+            "modifier": 3
+        }
+    ]
+}

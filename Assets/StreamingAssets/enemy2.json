@@ -1,0 +1,14 @@
+{
+    "actions": [
+        {
+            "explanation": "Poison",
+            "action": [4],
+            "modifier": 2
+        },
+        {
+            "explanation": "Armor",
+            "action": [0],
+            "modifier": 2
+        }
+    ]
+}
